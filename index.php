@@ -10,10 +10,27 @@
 		<header class="header">
 			<div class="opciones">
 				<div class="opc-1">
-					<label><?php echo GetNombreUsuario(); ?></label>
+					<?php $nombre = GetNombreUsuario(); ?>
+					<label>
+						<?php 
+							if($nombre != "0"){
+								echo $nombre;
+							}else{
+								echo "Inicio de Sesion";
+							}
+					 	?>	 	
+					 </label>
 				</div>
 				<div class="opc-2">
-					
+					<label>
+							<?php 
+								if($nombre != "0"){
+									echo $nombre;
+								}else{
+									echo "Registro";
+								}
+						 	?>	
+					</label>
 				</div>
 			</div>
 		</header>

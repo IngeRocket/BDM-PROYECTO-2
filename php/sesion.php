@@ -45,7 +45,12 @@
 		return $_SESSION['Loggeo'];
 	}
 	function GetNombreUsuario(){
-		return $_SESSION['Usuario'];
+		if(isset($_SESSION['Usuario'])!= null){
+			return $_SESSION['Usuario'];
+		}else{
+			return "0";
+		}
+		
 	}
 	function GetCorreoUsuario(){
 		return $_SESSION['CorreoUsuario'];
@@ -79,7 +84,10 @@
 	}
 
 
-
+	function AumentarContadorFase(){
+		$var = 1 + $_SESSION['CursoFase'];
+		$_SESSION['CursoFase'] = $var;
+	}
 	function GetRutaFisica(){
 		$ruta = "C:/temp/";
 		return $ruta;

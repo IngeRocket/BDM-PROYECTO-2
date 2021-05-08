@@ -112,7 +112,39 @@
 		//return $ClaveDeCurso;
 		}
 
-	function CrearFase($titulo, $descripcion, $video, $costo, $estadoPrecio, $curso){
-		
+	function CrearFase($titulo, $descripcion, $video, $costo, $estadoPrecio, $pregunta){
+			$curso = GetClaveCurso(); 
+
+			$var = new Conexion;
+			$mysqli = $var->getConexion();
+
+			$sentencia = $mysqli->prepare("CALL SP_CrearFase(?,?,?,?,?,?)");
+			$sentencia->bind_param('ssssss',$titulo,$descripcion,$video, $costo, $estadoPrecio, $curso);
+			$sentencia->execute();
+			
+			if($sentencia){
+				$resultado = $sentencia->get_result();
+						while( $r = $resultado->fetch_assoc()) {
+						                $rows[] = $r;
+						         }                    
+						$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+						$array = (array)json_decode($ValorRegresado);
+						$ClaveFase = $array[0]->idFase; //siempre me regresa 1 solo valor
+						SetIdFase($ClaveFase);
+						AumentarContadorFase();
+
+						if($pregunta == "SI"){
+							header("Location: archivo-fase.php");
+						}else{
+							//recargar pagina para que aparezca boton
+							header("Location: crear-fase.php");
+						}
+						
+					}else{
+						echo "error en la llamada";
+					}
+			
+			$sentencia->close();
+			$var->CerrarConexion();
 		}
  ?>
