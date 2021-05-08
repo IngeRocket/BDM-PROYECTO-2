@@ -3,6 +3,7 @@
 	include 'capaController.php';
 	include 'sesion.php';
 
+
 	function login($usuario, $pass, $tipo){
 		$var = new Conexion;
 		$mysqli = $var->getConexion();
@@ -81,7 +82,8 @@
 		$sentencia->close();
 		$var->CerrarConexion();
 	}
-	function CrearCurso($autor,$titulo, $descripcion, $video, $imagen, $iextension){
+	function CrearCurso($titulo, $descripcion, $video, $imagen, $iextension){
+		$autor = GetIdUsuario();
 		$ClaveDeCurso;
 		$var = new Conexion;
 		$mysqli = $var->getConexion();
@@ -98,13 +100,16 @@
 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
 					$array = (array)json_decode($ValorRegresado);
 					$ClaveDeCurso = $array[0]->ClaveCurso; //siempre me regresa 1 solo valor
+					SetClaveCurso($ClaveDeCurso);
+					SetCantidadFase(0);
+					header("Location: seleccion-categoria.php");
 				}else{
 					echo "error en la llamada";
 				}
 		
 		$sentencia->close();
 		$var->CerrarConexion();
-		return $ClaveDeCurso;
+		//return $ClaveDeCurso;
 		}
 
 	function CrearFase($titulo, $descripcion, $video, $costo, $estadoPrecio, $curso){

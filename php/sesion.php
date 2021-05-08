@@ -29,6 +29,15 @@
 	function SetIdUsuario($id){
 		$_SESSION['IdUsuario'] = $id;
 	}
+	function SetClaveCurso($idCurso){
+		$_SESSION['IdCurso'] = $idCurso;
+	}
+	function SetIdFase($id){
+		$_SESSION['CursoFaseId'] = $id;
+	}
+	function SetCantidadFase($cantidad){
+		$_SESSION['CursoFase'] = $cantidad;
+	}
 
 
 	//GET
@@ -59,9 +68,22 @@
 	function GetIdUsuario(){
 		return $_SESSION['IdUsuario'];
 	}
+	function GetClaveCurso(){
+		return $_SESSION['IdCurso'];
+	}
+	function GetIdFase(){
+		return $_SESSION['CursoFaseId'];
+	}
+	function GetCantidadFase(){
+		return $_SESSION['CursoFase'];
+	}
 
 
 
+	function GetRutaFisica(){
+		$ruta = "C:/temp/";
+		return $ruta;
+	}
 
 	function CerrarSesion(){
 		session_destroy();
