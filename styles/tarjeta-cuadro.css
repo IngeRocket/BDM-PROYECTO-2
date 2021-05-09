@@ -1,0 +1,58 @@
+.tarjeta-cuadro{
+	background-color: #0B5351;
+	display: flex;
+	flex-flow: column;
+	max-width: 450px;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 15px;
+}
+.t-imagen{
+	display: flex;
+	justify-content: center;
+}
+.t-imagen > img {
+	width: 100%;
+}
+.t-titulo{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	color: white;
+	font-size: 1.3em;
+}
+.t-descripcion{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	color: white;
+	font-size: 1.1em;
+}
+.t-categoria{
+	display flex;
+	justify-content: center;
+	color: white;
+	text-align: center;
+}
+.t-enlace{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
+.t-enlace > a{
+	width: 50%;
+	text-decoration: none;
+	color: black;
+	font-size: 1.2em;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: white;
+	text-align: center;
+}
+/*
+<div class="tarjeta-cuadro">
+				<div class="t-imagen"> <img src="img/fondo.png"></div>
+				<div class="t-titulo"><label>Titulo</label></div>
+				<div class="t-descripcion"><p>Descripcion del articulo</p></div>
+				<div class="t-enlace"><a href="#">Ver curso</a></div>
+			</div>

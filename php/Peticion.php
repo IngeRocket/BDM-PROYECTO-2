@@ -12,6 +12,10 @@
 		case 'CursoCategoria':
 			CursoCategoria();
 		break;
+
+		case 'Principal':
+			Principal();
+		break;
 	}
 
 	function Categoria(){
@@ -39,6 +43,23 @@
 
 		$sentencia = $mysqli->prepare("CALL SP_CursoCategoria(?,?)");
 		$sentencia->bind_param('ss', $curso, $categoria);
+		$sentencia->execute();
+		
+		$resultado = $sentencia->get_result();
+				while( $r = $resultado->fetch_assoc()) {
+				                $rows[] = $r;
+				         }                    
+				echo json_encode($rows,JSON_UNESCAPED_UNICODE); 
+		$sentencia->close();
+		$var->CerrarConexion();
+	}
+
+	function Principal(){
+
+		$var = new Conexion;
+		$mysqli = $var->getConexion();
+
+		$sentencia = $mysqli->prepare("CALL SP_Principal()");
 		$sentencia->execute();
 		
 		$resultado = $sentencia->get_result();

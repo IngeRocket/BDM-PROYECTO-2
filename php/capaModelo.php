@@ -146,7 +146,7 @@
 			
 			$sentencia->close();
 			$var->CerrarConexion();
-		}
+	}
 	function ArchivoFase($ruta){
 		$Fase = GetIdFase();
 		
@@ -179,5 +179,6 @@
 			$sentencia->close();
 			$var->CerrarConexion();
 	}
- 
+	
+
  ?>
