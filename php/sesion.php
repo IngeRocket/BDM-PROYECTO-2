@@ -42,7 +42,11 @@
 
 	//GET
 	function GetLoggeo(){
-		return $_SESSION['Loggeo'];
+		if (isset($_SESSION['Loggeo']) != null) {
+			return $_SESSION['Loggeo'];
+		}else{
+			return "0";
+		}
 	}
 	function GetNombreUsuario(){
 		if(isset($_SESSION['Usuario'])!= null){

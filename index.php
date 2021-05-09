@@ -10,13 +10,14 @@
 		<header class="header">
 			<div class="opciones">
 				<div class="opc-1">
-					<?php $nombre = GetNombreUsuario(); ?>
+					<?php $prueba = GetLoggeo(); ?>
 					<label>
 						<?php 
-							if($nombre != "0"){
-								echo $nombre;
+							if($prueba != "0"){
+								$nombre = GetNombreUsuario();
+								echo "<a href='configuracion.php'>".$nombre."</a>";
 							}else{
-								echo "Inicio de Sesion";
+								echo '<a href="login.php">Inicio de Sesion</a>';
 							}
 					 	?>	 	
 					 </label>
@@ -24,10 +25,10 @@
 				<div class="opc-2">
 					<label>
 							<?php 
-								if($nombre != "0"){
-									echo $nombre;
+								if($prueba != "0"){
+									echo '<a href="despedida.php">Cerrar Sesion</a>';
 								}else{
-									echo "Registro";
+									echo '<a href="registro.php">Registro</a>';
 								}
 						 	?>	
 					</label>

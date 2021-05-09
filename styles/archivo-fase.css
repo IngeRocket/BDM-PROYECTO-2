@@ -1,0 +1,18 @@
+html, body{
+	height: 100%;
+}
+.contenedor{
+	display: flex;
+	height: 100%;
+	background-color: pink;
+	flex-flow: column;
+}
+form{
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	background-color: gray;
+}
+.titulo{
+	font-size: 1.3em;
+}

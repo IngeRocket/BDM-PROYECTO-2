@@ -109,7 +109,7 @@
 		
 		$sentencia->close();
 		$var->CerrarConexion();
-		//return $ClaveDeCurso;
+		
 		}
 
 	function CrearFase($titulo, $descripcion, $video, $costo, $estadoPrecio, $pregunta){
@@ -147,4 +147,37 @@
 			$sentencia->close();
 			$var->CerrarConexion();
 		}
+	function ArchivoFase($ruta){
+		$Fase = GetIdFase();
+		
+		$var = new Conexion;
+			$mysqli = $var->getConexion();
+
+			$sentencia = $mysqli->prepare("CALL SP_ArchivoFase(?,?)");
+			$sentencia->bind_param('ss',$ruta, $Fase);
+			$sentencia->execute();
+			
+			if($sentencia){
+				$resultado = $sentencia->get_result();
+						while( $r = $resultado->fetch_assoc()) {
+						                $rows[] = $r;
+						         }                    
+						$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+						$array = (array)json_decode($ValorRegresado);
+						
+
+						if($array[0]->Respuesta == "1"){
+							echo'<script type="text/javascript">
+					    	alert("'.$array[0]->Mensaje.'");
+					    	</script>';
+						}
+						
+					}else{
+						echo "error en la llamada";
+					}
+			
+			$sentencia->close();
+			$var->CerrarConexion();
+	}
+ 
  ?>
