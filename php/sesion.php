@@ -93,7 +93,7 @@
 		$_SESSION['CursoFase'] = $var;
 	}
 	function GetRutaFisica(){
-		$ruta = "C:/temp/";
+		$ruta = "uploads/";
 		return $ruta;
 	}
 
