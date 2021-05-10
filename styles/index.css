@@ -1,48 +1,4 @@
-.contenedor{
-	display: flex;
-	flex-flow: column;
-	background-color: gray;
-}
-.header{
-	display: flex;
-	flex: 1 1 auto;
-	background-color: orange;
-}
-.menu{
-	display: flex;
-	flex-flow: column;
-	flex: 1 1 auto;
-	background-color: #00A9A5;
-}
-.opciones{
-	display: flex;
-	justify-content: flex-end;
-	border-top: solid white 3px;
-}
-.opciones > .opc{
-	margin: 5px;
-}
-.logo{
-	display: flex;
-	background-color: #0B5351;
-	justify-content: center;
-	border-bottom: solid white 3px;
-}
-.categorias{
-	display: flex;
-	justify-content: center;
-}
-.categoria{
-	font-size: 1.2em;
-	color: white;
-	margin: 5px;
-}
 
- .opc > label > a{
-	text-decoration: none;
-	color: white;
-	font-size: 1.1em;
-}
 .contenido{
 	display: flex;
 	flex-flow: column;

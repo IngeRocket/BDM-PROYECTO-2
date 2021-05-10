@@ -180,5 +180,45 @@
 			$var->CerrarConexion();
 	}
 	
+	function ConsultaCurso($idCurso){
+		$preguntaSesion = GetLoggeo();
+		$idUsuario = 0;
+		if($preguntaSesion == "0"){
+			$idUsuario = 0;
+		}else{
+			$idUsuario = GetIdUsuario();
+		}
 
+		$var = new Conexion;
+		$mysqli = $var->getConexion();
+
+		$sentencia = $mysqli->prepare("CALL SP_VerCurso(?,?)");
+		$sentencia->bind_param('ss',$idCurso, $idUsuario);
+		$sentencia->execute();
+		
+		if($sentencia){
+			$resultado = $sentencia->get_result();
+					while( $r = $resultado->fetch_assoc()) {
+					                $rows[] = $r;
+					         }
+
+						$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+						$array = (array)json_decode($ValorRegresado);
+
+						if ($array[0]->Respuesta == 0 ){
+							echo'<script type="text/javascript">
+							    alert("'.$array[0]->Mensaje.'");
+							    </script>';
+						}else{
+							return $array;
+						}				
+						                  
+					
+				}else{
+					echo "error en la llamada";
+				}
+		
+		$sentencia->close();
+		$var->CerrarConexion();
+	}
  ?>

@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/index.css">
 	<link rel="stylesheet" type="text/css" href="styles/pagina-finalizado.css">
 	<link rel="stylesheet" type="text/css" href="styles/tarjeta-cuadro.css">
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -13,7 +14,7 @@
 	<div class="contenedor">
 		<header class="header">
 			<div class="menu">
-				<div class="logo"><img src="img/navbar/escuela-logo.png"></div>
+				<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
 				<div class="categorias">
 					<div class="categoria">Mas vendidos</div>
 					<div class="categoria">Mas populares</div>
@@ -54,9 +55,30 @@
 		<div class="contenido">
 			<div class="separador"><label>Seccion 1</label></div>
 			<div class="grupo">
+				<div class="tarjeta-cuadro">
+				<div class="t-imagen"> <img src="img/fondo.png"></div>
+				<div class="t-titulo"><label>Titulo</label></div>
+				<div class="t-descripcion"><p>Descripcion del articulo</p></div>
+				<div class="t-categoria"><p>Lista de categorias</p></div>
+				<div class="t-enlace"><a href="curso.php?Curso=1">Ver curso</a></div>
+				</div>
 
-				
+				<div class="tarjeta-cuadro">
+				<div class="t-imagen"> <img src="img/fondo.png"></div>
+				<div class="t-titulo"><label>Titulo</label></div>
+				<div class="t-descripcion"><p>Descripcion del articulo</p></div>
+				<div class="t-categoria"><p>Lista de categorias</p></div>
+				<div class="t-enlace"><a href="curso.php?Curso=2">Ver curso</a></div>
+				</div>
 			
+				<div class="tarjeta-cuadro">
+				<div class="t-imagen"> <img src="img/fondo.png"></div>
+				<div class="t-titulo"><label>Titulo</label></div>
+				<div class="t-descripcion"><p>Descripcion del articulo</p></div>
+				<div class="t-categoria"><p>Lista de categorias</p></div>
+				<div class="t-enlace"><a href="curso.php?Curso=3">Ver curso</a></div>
+				</div>
+
 			</div>
 			
 		</div>

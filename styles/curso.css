@@ -1,0 +1,32 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+.contenido{
+	display: flex;
+	flex: 1 1 auto;
+	background-color: gray;
+}
+.izq {
+	display: flex;
+	flex-flow: row;
+	flex: 1 1 auto;
+	margin: 5px;
+	background-color: skyblue;
+}
+.der {
+	display: flex;
+	flex-flow: column;
+	flex: 2 1 auto;
+	margin: 5px;
+	background-color: skyblue;
+}
+.video{
+	display: flex;
+	justify-content: center;
+	background-color: yellow;
+}
+.video > video {
+	width: 100%;
+}
