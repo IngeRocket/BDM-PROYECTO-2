@@ -24,24 +24,21 @@
 	if(isset($_POST['enviar'])){
 		$nombreCurso = $_POST['c-name'];
 		$descripcionCurso = $_POST['c-desc'];
+
 		$rutaVideo 		= 	$_FILES['c-video']['name'];
+		$rutaMiniatura 	= 	$_FILES['c-img']['name'];
 		$rutaFisica = GetRutaFisica();
 
-		$rutaMiniatura 	= 	$_FILES['c-img']['name'];
 
-		$rutaMiniatura 		= pathinfo($rutaMiniatura);
-		$extensionImagen	= $rutaMiniatura['extension'];
+		$rutaAbsolutaMiniatura	 	= $rutaFisica.$rutaMiniatura;
+		$rutaAbsolutaVideo 			= $rutaFisica.$rutaVideo;
 
-		$rutaAbsolutaVideo = $rutaFisica.$rutaVideo;
-
-		$pesoImagen = $_FILES['c-img']['size'];
-		$archivo = fopen($_FILES['c-img']['tmp_name'],'r');
-		$binario = fread($archivo, $pesoImagen);
+	
 
 		move_uploaded_file($_FILES['c-video']['tmp_name'], $rutaAbsolutaVideo);
 
 
-		CrearCurso($nombreCurso, $descripcionCurso, $rutaAbsolutaVideo, $binario, $extensionImagen);
+		CrearCurso($nombreCurso, $descripcionCurso, $rutaAbsolutaVideo, $rutaAbsolutaMiniatura);
 
 		echo $nombreCurso.'<br>';
 		echo $descripcionCurso.'<br>';

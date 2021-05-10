@@ -63,7 +63,7 @@
 			<div class="izq">
 				<div class="video">
 					
-					<video controls src="C:/temp/FLEXBOX.mp4">no soportado</video>
+					<video controls src="uploads/FLEXBOX.mp4">no soportado</video>
 				</div>
 			</div>
 			<div class="der"><label>adios</label></div>

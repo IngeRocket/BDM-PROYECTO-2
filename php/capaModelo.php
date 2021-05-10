@@ -81,14 +81,14 @@
 		$sentencia->close();
 		$var->CerrarConexion();
 	}
-	function CrearCurso($titulo, $descripcion, $video, $imagen, $iextension){
+	function CrearCurso($titulo, $descripcion, $video, $imagen){
 		$autor = GetIdUsuario();
 		$ClaveDeCurso;
 		$var = new Conexion;
 		$mysqli = $var->getConexion();
 
-		$sentencia = $mysqli->prepare("CALL SP_CrearCurso(?,?,?,?,?,?)");
-		$sentencia->bind_param('ssssss',$titulo,$descripcion,$video,$autor,$imagen,$iextension);
+		$sentencia = $mysqli->prepare("CALL SP_CrearCurso(?,?,?,?,?)");
+		$sentencia->bind_param('sssss',$titulo,$descripcion,$video,$autor,$imagen);
 		$sentencia->execute();
 		
 		if($sentencia){

@@ -28,9 +28,9 @@
 		<div class="fase">
 			<form method="post" enctype="multipart/form-data">		
 				<label>Titulo de fase</label>
-				<input type="text" name="nombre-fase" placeholder="Nombre de la fase...">
+				<input type="text" name="nombre-fase" placeholder="Nombre de la fase..." required>
 				<label>Descripcion de la fase</label>
-				<textarea name="descripcion-fase" maxlength="150" placeholder="Descripcion de la fase..."></textarea>
+				<textarea name="descripcion-fase" maxlength="150" placeholder="Descripcion de la fase..." required></textarea>
 				<label>Costo de la fase</label>
 				<div class="renglon">
 					<label><input type="radio" id="precio-gratis" 	value="1" name="costo" checked>Gratis</label>
@@ -39,7 +39,7 @@
 				<input type="number" name="precio" id="costo" min="0" max="9999.99" value="0.00" step="0.25" readonly>
 				
 				<label>Video de la fase</label>
-				<input type="file" name="video" accept=".mp4">
+				<input type="file" name="video" accept=".mp4" required>
 				<label>Esta fase va a contener archivos?</label>
 				<div class="renglon">
 				<label><input type="radio" name="pregunta" value="SI" checked="">Si </label>
