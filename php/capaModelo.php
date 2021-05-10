@@ -35,7 +35,6 @@
 						SetFechaModificacion($array[0]->Modificacion);
 						SetCorreoUsuario($array[0]->Correo);
 						SetFotoUsuario($array[0]->Foto);
-						SetFotoUsuarioExtension($array[0]->FotoExtension);
 
 						if($array[0]->Rol == "Alumno"){
 							header("Location: index.php");

@@ -2,23 +2,98 @@
 <html>
 <head>
 	<title>Perfil</title>
-	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
+	<link rel="stylesheet" type="text/css" href="styles/configuracion.css">
 </head>
 <body>
 	<?php include 'php/capaModelo.php' ?>
 	<div class="contenedor">
 		<header class="header">
-			<div class="barra-alumno"> hola </div>
-			<div class="barra-instructor"> adios </div>
-			<div class="opcion">
-				<form method="post" action="despedida.php">
-					<button type="submit" name="cerrar-sesion">Cerrar Sesion</button>
-				</form>
-			</div>
+					<div class="menu">
+						<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
+						<div class="panel">
+							<div class="panel-opc"> <a href="crear-curso.php">Crear Curso</a></div>
+							<div class="panel-opc"> <a href="#">Mis cursos</a></div>
+							<div class="panel-opc"> <a href="#">Ventas</a></div>
+						</div>
+						<div class="panel">
+							<div class="panel-opc"> <a href="#">Mis Cursos</a></div>
+							<div class="panel-opc"> <a href="#">Mensajes</a></div>
+						</div>
+						<div class="opciones">
+							<div class="opc">
+								<?php $prueba = GetLoggeo(); ?>
+								<label>
+									<?php 
+										if($prueba != "0"){
+											$nombre = GetNombreUsuario();
+											echo "<a href='configuracion.php'>".$nombre."</a>";
+										}else{
+											echo '<a href="login.php">Inicio de Sesion</a>';
+										}
+								 	?>	 	
+								 </label>
+							</div>
+							<div class="opc">
+								<label>
+										<?php 
+											if($prueba != "0"){
+												echo '<a href="despedida.php">Cerrar Sesion</a>';
+											}else{
+												echo '<a href="registro.php">Registro</a>';
+											}
+									 	?>	
+								</label>
+							</div>
+						</div>
+					</div>
 		</header>
+		<div class="area">
+			<div class="panel-izq">
+				<div class="informacion">
+					<div class="mi-foto">
+						<img src="img/usuario.jpg">
+					</div>
+					<div class="datos">
+						<label class="i-panel">Rol</label>
+						<label class="i-panel-u"><?php 
+							if(GetLoggeo() != "0"){
+								echo GetRolUsuario();
+							}
+						 ?></label>
+						<label class="i-panel">Nombre</label>
+						<label class="i-panel-u"><?php 
+							if(GetLoggeo() != "0"){
+								echo GetNombreUsuario();
+							}
+						 ?></label>
+						<label class="i-panel">Correo electronico</label>
+						<label class="i-panel-u"><?php 
+							if(GetLoggeo() != "0"){
+								echo GetCorreoUsuario();
+							}
+						 ?></label>
+						<label class="i-panel">Fecha de alta</label>
+						<label class="i-panel-u"><?php 
+							echo GetFechaAlta();
+						 ?></label>
+						<label class="i-panel">Fecha de Modificacion</label>
+						<label class="i-panel-u"><?php 
+							echo GetFechaModificacion();
+						 ?></label>
+					</div>
+					<div class="botones">
+						<button>Cambiar foto de usuario</button>
+						<button>Cambiar clave de acceso</button>
+					</div>
+				</div>
+			</div>
+			<div class="panel-der"><label>Panel 2</label></div>
+		</div>
 	</div>
 	<?php 
 
 	 ?>
 </body>
 </html>
+
