@@ -66,7 +66,11 @@
 		return $_SESSION['FotoUsuarioExtension'];
 	}
 	function GetRolUsuario(){
-		return $_SESSION['RolUsuario'];
+		if(isset($_SESSION['RolUsuario']) != null){
+			return $_SESSION['RolUsuario'];
+		}else{
+			return "0";
+		}	
 	}
 	function GetFechaAlta(){
 		return $_SESSION['UsuarioAlta'];

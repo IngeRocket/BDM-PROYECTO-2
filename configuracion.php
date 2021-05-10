@@ -11,15 +11,26 @@
 		<header class="header">
 					<div class="menu">
 						<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
+						<?php if( GetRolUsuario() != "0" && GetRolUsuario() == "Instructor"){
+							?>
 						<div class="panel">
 							<div class="panel-opc"> <a href="crear-curso.php">Crear Curso</a></div>
 							<div class="panel-opc"> <a href="#">Mis cursos</a></div>
 							<div class="panel-opc"> <a href="#">Ventas</a></div>
 						</div>
+						<?php 
+							}
+						 ?>
+						<?php if( GetRolUsuario() != "0" && GetRolUsuario() == "Alumno"){
+							?>
+						
 						<div class="panel">
 							<div class="panel-opc"> <a href="#">Mis Cursos</a></div>
 							<div class="panel-opc"> <a href="#">Mensajes</a></div>
 						</div>
+						<?php 
+							}
+						 ?>
 						<div class="opciones">
 							<div class="opc">
 								<?php $prueba = GetLoggeo(); ?>
