@@ -1,7 +1,6 @@
 .contenedor{
 	display: flex;
 	flex-flow: column;
-	background-color: gray;
 }
 
 .header{
