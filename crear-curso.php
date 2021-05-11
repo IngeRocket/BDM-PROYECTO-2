@@ -2,23 +2,35 @@
 <html>
 <head>
 	<title>Crear Curso</title>
-	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<link rel="stylesheet" type="text/css" href="styles/crear-curso.css">
 </head>
 <body>
 <?php include 'php/capaModelo.php'; ?>
 	<div class="contenedor">
-		<form method="post" enctype="multipart/form-data">
-			<label>Nombre del curso</label>
-			<input type="text" name="c-name" maxlength="90" placeholder="Titulo del curso" required>
-			<label>Descripcion del curso</label>
-			<textarea name="c-desc" maxlength="150" placeholder="Descripcion del curso..." required></textarea>
-			<label>Miniatura del curso (Imagen)</label>
-			<input type="file" name="c-img" accept=".bmp, .png, .jpg" required>
-			<label>Video del curso</label>
-			<input type="file" name="c-video" accept=".mp4" required>
-			<button type="submit" name="enviar">Crear Curso</button>
-		</form>
+		<header class="header">
+			<div class="menu">
+				<div class="logo">
+					<img src="img/navbar/escuela-logo.png">
+				</div>
+			</div>
+		</header>
+		<div class="contenido">
+			<form method="post" enctype="multipart/form-data">
+				<label>Nombre del curso</label>
+				<input type="text" name="c-name" maxlength="90" placeholder="Titulo del curso" required>
+				<label>Descripcion del curso</label>
+				<textarea name="c-desc" maxlength="150" placeholder="Descripcion del curso..." required></textarea>
+				<label>Miniatura del curso (Imagen)</label>
+				<input type="file" name="c-img" accept=".bmp, .png, .jpg" required>
+				<label>Video del curso</label>
+				<input type="file" name="c-video" accept=".mp4" required>
+				<button type="submit" name="enviar">Crear Curso</button>
+			</form>	
+		</div>
+		<div class="centrado">
+			<a href="configuracion.php">Cancelar</a>
+		</div>
 	</div>
 	<?php 
 	if(isset($_POST['enviar'])){

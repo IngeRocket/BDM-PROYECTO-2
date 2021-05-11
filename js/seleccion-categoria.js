@@ -54,7 +54,7 @@ $(document).ready( function(){
     });
 
     $("body").on("click", "#ListaCompleta", function(){
-        alert(IdCurso);
+        //alert(IdCurso);
         if(terminado){
             terminado = false;
 
