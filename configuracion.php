@@ -63,7 +63,18 @@
 			<div class="panel-izq">
 				<div class="informacion">
 					<div class="mi-foto">
-						<img src="img/usuario.jpg">
+						<?php 
+							if(GetLoggeo() != "0"){
+							$ruta =	GetFotoUsuario();
+						?>
+							<img src= <?php echo "'".$ruta."'";  ?> >	
+						<?php
+							}else{
+						 ?>
+							<img src="img/perfil.png">
+						<?php 
+							}
+						 ?>
 					</div>
 					<div class="datos">
 						<label class="i-panel">Rol</label>
@@ -86,11 +97,15 @@
 						 ?></label>
 						<label class="i-panel">Fecha de alta</label>
 						<label class="i-panel-u"><?php 
-							echo GetFechaAlta();
+							if(GetLoggeo() != "0"){
+								echo GetFechaAlta();
+							}
 						 ?></label>
 						<label class="i-panel">Fecha de Modificacion</label>
 						<label class="i-panel-u"><?php 
-							echo GetFechaModificacion();
+							if(GetLoggeo() != "0"){
+								echo GetFechaModificacion();
+							}
 						 ?></label>
 					</div>
 					<div class="botones">

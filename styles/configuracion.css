@@ -42,7 +42,7 @@
 	display: flex;
 	justify-content: center;
 	border-radius: 50%;
-	background-color: orange;
+	background-color: white;
 	overflow: hidden;
 	border: solid gray 1px;
 	height: 200px;
@@ -50,6 +50,7 @@
 }
 .mi-foto > img{
 	width: 100%;
+	object-position: center;
 }
 .informacion > .datos{
 	margin-top: 20px;
