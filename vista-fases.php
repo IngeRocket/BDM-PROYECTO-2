@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Vista Fases</title>
-	<link rel="stylesheet" type="text/css" href="styles/vista-fase.css">
+	<link rel="stylesheet" type="text/css" href="styles/vista-fases.css">
 </head>
 <body>
 	<?php include 'php/capaModelo.php';
