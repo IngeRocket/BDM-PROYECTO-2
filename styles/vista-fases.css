@@ -30,6 +30,7 @@
 	color: white;
 	font-size: 1.1em;
 }
+
 .l-nombre{
 	display: flex;
 	flex: 1 1 auto;
@@ -91,4 +92,15 @@
 .centrado > a:hover{
 	background-color: #279b7c;
 	color: white;
+}
+
+.cabecera{
+	display: flex;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px #5f66d5;
+	border-radius: 10px;
+	color: black;
+	font-size: 1.1em;
 }

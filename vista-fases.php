@@ -25,6 +25,14 @@
 					</label>
 					<label>Fases </label>
 				</div>
+
+				<div class="cabecera">	
+					<div class="l-nombre"><p>Nombre</p></div>
+					<div class="l-descripcion"><p>Descripcion</p></div>
+					<div class="l-archivos"><p>Cantidad archivos</p></div>
+					<div class="l-estado"><p>Estado</p></div>
+				</div>
+
 					<?php 
 						if($array[0]->Respuesta=="1"){
 							for($i = 0; $i < count($array); $i++){
@@ -33,7 +41,14 @@
 							<div class="l-nombre"><p><?php echo $array[$i]->Titulo; ?></p></div>
 							<div class="l-descripcion"><p><?php echo $array[$i]->Descripcion; ?></p></div>
 							<div class="l-archivos"><p><?php echo $array[$i]->CantidadArchivos; ?></p></div>
-							<div class="l-estado"><p> Visto </p></div>
+							<div class="l-estado"><p><?php 
+								if($array[$i]->Progreso=="0"){
+									echo "";
+								}else{
+									echo "Completado";
+								}
+
+							 ?></p></div>
 						</div>
 					<?php
 							}//cierre de for

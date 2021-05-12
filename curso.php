@@ -65,7 +65,7 @@
 				<div class="video">
 					
 					<?php 
-						if($respuesta[0]->Respuesta=="0"){
+						if($respuesta[0]->Respuesta == 0){
 					?>
 					<video controls src="" poster="img/fondo.png">no soportado</video>
 					<?php
@@ -82,7 +82,7 @@
 			<div class="der">
 				<div class="titulo">
 					<?php 
-						if($respuesta[0]->Respuesta=="0"){
+						if($respuesta[0]->Respuesta == 0){
 					?>
 						<label>Titulo del curso</label>
 					<?php		
@@ -97,7 +97,7 @@
 				<div class="descripcion">
 
 					<?php 
-						if ($respuesta[0]->Respuesta =="0"){
+						if ($respuesta[0]->Respuesta == 0){
 					?>
 						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 					<?php
@@ -128,7 +128,7 @@
 					<label class="negritas">Autor del curso:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "Nombre del autor";
 							}else{
 							echo $respuesta[0]->NombreAutor;
@@ -140,7 +140,7 @@
 					<label class="negritas">Costo:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "$0.00";
 							}else{
 								if($respuesta[0]->Precio == "0.00"){
@@ -156,7 +156,7 @@
 					<label class="negritas">Numero de fases:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "#";
 							}else{
 							echo $respuesta[0]->Fases;
@@ -168,7 +168,7 @@
 					<label class="negritas">Numero de fases gratuitas:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "#";
 							}else{
 							echo $respuesta[0]->FasesGratuitas;
@@ -180,7 +180,7 @@
 					<label class="negritas">Calificacion:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "Sin calificacion";
 							}else{
 								if($respuesta[0]->Calificacion = "0.00"){
@@ -196,7 +196,7 @@
 					<label class="negritas">Alumnos inscritos:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "#";
 							}else{
 							echo $respuesta[0]->Alumnos;
@@ -208,7 +208,7 @@
 					<label class="negritas">Categorias:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == "0"){
+						if($respuesta[0]->Respuesta == 0){
 							echo "#";
 							}else{
 							echo $respuesta[0]->Categorias;
@@ -218,12 +218,21 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 	<?php 
 		if(isset($_POST['ver-contenido'])){
 			header("Location: vista-fases.php");
 		}
+		if(isset($_POST['alta-curso'])){
+			//mandar a llamar una funcion para inscribir y recargar pagina
+		}
+		if(isset($_POST['comprar-curso'])){
+			//mandar a llamar funcion para comprar y recargar pagina
+		}
+		if(isset($_POST['crear-mensaje'])){
+			//ir a otra pagina para crear el mensaje de dua sobre el curso
+		}
 	 ?>
 </body>
 </html>
-
