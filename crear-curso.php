@@ -48,6 +48,7 @@
 	
 
 		move_uploaded_file($_FILES['c-video']['tmp_name'], $rutaAbsolutaVideo);
+		move_uploaded_file($_FILES['c-img']['tmp_name'], $rutaAbsolutaMiniatura);
 
 
 		CrearCurso($nombreCurso, $descripcionCurso, $rutaAbsolutaVideo, $rutaAbsolutaMiniatura);

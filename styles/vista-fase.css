@@ -1,0 +1,57 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+.contenido{
+	display: flex;
+	justify-content: center;
+	flex: 1 1 auto;
+}
+.elementos{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	max-width: 80%;
+}
+.lista{
+	display: flex;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px gray;
+	border-radius: 10px;
+}
+.l-nombre{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.l-descripcion{
+	display: flex;
+	flex: 5 1 auto;
+	background-color: skyblue;
+}
+.l-archivos{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.l-estado{
+	display: flex;
+	flex: 1 1 auto;
+	background-color: skyblue;
+	justify-content: center;
+}
+.titulos{
+	margin-top: 20px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	flex: 1 1 auto;
+	font-size: 1.3em;
+}

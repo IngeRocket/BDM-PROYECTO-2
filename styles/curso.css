@@ -6,27 +6,123 @@
 .contenido{
 	display: flex;
 	flex: 1 1 auto;
-	background-color: gray;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 1px gray;
 }
-.izq {
+.izq{
 	display: flex;
-	flex-flow: row;
 	flex: 1 1 auto;
+	justify-content: center;
 	margin: 5px;
 	background-color: skyblue;
+	max-width: 600px;
 }
 .der {
 	display: flex;
 	flex-flow: column;
-	flex: 2 1 auto;
+	flex: 5 1 auto;
 	margin: 5px;
-	background-color: skyblue;
 }
 .video{
 	display: flex;
-	justify-content: center;
+	flex-flow: column;
+	align-items: center;
 	background-color: yellow;
+	flex: 1 1 auto;
 }
 .video > video {
 	width: 100%;
+}
+.titulo{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	border-bottom: solid 1px gray;
+}
+.descripcion{
+	display: flex;
+	flex: 5 1 auto;
+	justify-content: center;
+	font-size: 1.1em;
+	border: solid 1px gray;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+}
+.botones{
+	display: flex;
+	flex-flow: row wrap;
+	flex: 1 1 auto;
+	justify-content: center;
+	margin-top: 25px;
+}
+.botones > button{
+	width: 40%;
+	margin: 5px;
+	height: 35px;
+	font-size: 1.0em;
+	border-radius: 10px;
+	background-color: white;
+	color: black;
+}
+
+.btn-estilo1{
+	border: solid 1px #6e3ca8;
+	transition: all ease 0.3s;
+}
+.btn-estilo2{
+	border: solid 1px #00a8f3;
+	transition: all ease 0.3s;
+}
+.btn-estilo3{
+	border: solid 1px #279b7c;
+	transition: all ease 0.3s;
+}
+
+.btn-estilo1:hover{
+	cursor: hand;
+	cursor: pointer;
+	color: white;
+	background-color: #6e3ca8;
+}
+.btn-estilo2:hover{
+	cursor: hand;
+	cursor: pointer;
+	color: white;
+	background-color: #00a8f3;
+}
+.btn-estilo3:hover{
+	cursor: hand;
+	cursor: pointer;
+	color: white;
+	background-color: #279b7c;
+}
+
+.informacion{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	align-items: center;
+	font-size: 1.2em;
+	padding: 20px;
+}
+.fila > label{
+	margin:10px;
+}
+.fila{
+	display: flex;
+	flex: 1 1 auto;
+}
+.caja{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-content: flex-start;
+}
+.negritas{
+	font-weight: bold;
 }

@@ -35,7 +35,7 @@
 				<label>correo electronico</label>
 				<input type="text" name="u-correo" required placeholder="example@correo.com">
 				<label>clave de acceso</label>
-				<input type="password" name="u-pass" required placeholder="password">
+				<input type="password" name="u-pass" required placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La password debe contener al menos 1 caracter en mayuscula, 1 minuscula, 1 caracter especial y medir mas de 8 caracteres">
 				<button type="submit" name="registro">Registro</button>
 			</form>
 		</div>

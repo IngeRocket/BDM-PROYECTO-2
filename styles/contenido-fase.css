@@ -1,0 +1,47 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+.vista{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+.v-video{
+	display: flex;
+	justify-content: center;
+	flex: 1 1 auto;
+}
+.v-descripcion{
+	display: flex;
+	justify-content: center;
+	flex: 1 1 auto;
+}
+.v-archivos{
+	display: flex;
+	justify-content: center;
+	flex: 1 1 auto;
+	flex-flow: row wrap;
+}
+
+.v-botones{
+	display: flex;
+	justify-content: center;
+	flex: 1 1 auto;
+}
+
+.archivo{
+	display: flex;
+	flex: 1 1 auto;
+}
+.a-icono{
+
+}
+.a-nombre{
+	
+}
