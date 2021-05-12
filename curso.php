@@ -11,8 +11,6 @@
 		if(isset($_GET['Curso'])){
 			$identificador = $_GET['Curso'];
 			$respuesta = ConsultaCurso($identificador);
-			//echo $respuesta[0]->Respuesta;
-
 		}else{
 			echo 	'<script type="text/javascript">
 					alert("Acceso invalido");
@@ -60,67 +58,57 @@
 				</div>
 			</div>
 		</header>
+
 		<div class="contenido">
+		<?php if($respuesta[0]->Respuesta == "1"){  ?>
 			<div class="izq">
-				<div class="video">
-					
-					<?php 
-						if($respuesta[0]->Respuesta == 0){
-					?>
-					<video controls src="" poster="img/fondo.png">no soportado</video>
-					<?php
-						}else{
-					?>
+				<div class="video">				
+					<?php 	if($respuesta[0]->Respuesta == "1"){ ?>
 					<video controls poster= <?php echo "'".$respuesta[0]->Miniatura."'" ?> >
 					<source type="video/mp4" src=<?php echo "'".$respuesta[0]->EnlaceVideo."'"; ?> >
 					</video>
-					<?php		
-						}
-					 ?>
+					<?php	}	?>
 				</div>
 			</div>
 			<div class="der">
-				<div class="titulo">
+				<div class="titulo"><label>
 					<?php 
-						if($respuesta[0]->Respuesta == 0){
-					?>
-						<label>Titulo del curso</label>
-					<?php		
-						}else{
-							?>
-							<label><?php echo $respuesta[0]->Titulo; ?></label>
-					<?php		
+						if($respuesta[0]->Respuesta == "1"){
+							echo $respuesta[0]->Titulo;
 						}
 					 ?>
-					
+					</label>
 				</div>
 				<div class="descripcion">
-
+					<p>
 					<?php 
-						if ($respuesta[0]->Respuesta == 0){
-					?>
-						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-					<?php
-						}else{
-					?>
-						<p><?php echo $respuesta[0]->Descripcion; ?></p>
-					<?php
+						if ($respuesta[0]->Respuesta == "1"){			
+						echo $respuesta[0]->Descripcion; 
 						}
 					 ?>
-
-					
+					</p>
 				</div>
 				<div class="botones">
+					<?php if(GetLoggeo() != "0"){ 
+						if (GetRolUsuario() == "Alumno"){
+					?>					
 					<form method="post">
 						<button class="btn-estilo1" type="submit" name="comprar-curso">Comprar Curso</button>
 						<button class="btn-estilo2" type="submit" name="alta-curso">Inscribirme al contenido gratuito</button>
 						<button class="btn-estilo3" type="submit" name="ver-contenido">Acceder al contenido</button>
 						<button class="btn-estilo2" type="submit" name="crear-mensaje">Escribir duda</button>
 					</form>
+					<?php
+						}else{
+							echo '<h2>Solo los alumnos pueden acceder a las acciones del curso</h2>';
+						}
+					}else{ 
+						echo "Inicia sesion para acceder a las acciones del curso";
+					}
+					 ?>
 				</div>
 			</div>
-		</div>
-		
+		</div>	
 		<div class="informacion">
 			<label class="negritas">Informacion</label>
 			<div class="caja">
@@ -128,9 +116,7 @@
 					<label class="negritas">Autor del curso:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "Nombre del autor";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 							echo $respuesta[0]->NombreAutor;
 							}
 						 ?>
@@ -140,9 +126,8 @@
 					<label class="negritas">Costo:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "$0.00";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
+
 								if($respuesta[0]->Precio == "0.00"){
 									echo "Gratis";
 								}else{
@@ -156,9 +141,7 @@
 					<label class="negritas">Numero de fases:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "#";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 							echo $respuesta[0]->Fases;
 							}
 						 ?>
@@ -168,9 +151,7 @@
 					<label class="negritas">Numero de fases gratuitas:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "#";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 							echo $respuesta[0]->FasesGratuitas;
 							}
 						 ?>
@@ -180,9 +161,7 @@
 					<label class="negritas">Calificacion:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "Sin calificacion";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 								if($respuesta[0]->Calificacion = "0.00"){
 									echo "Sin Calificar";
 								}else{
@@ -196,9 +175,7 @@
 					<label class="negritas">Alumnos inscritos:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "#";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 							echo $respuesta[0]->Alumnos;
 							}
 						 ?>
@@ -208,9 +185,7 @@
 					<label class="negritas">Categorias:</label>
 					<label>
 						<?php 
-						if($respuesta[0]->Respuesta == 0){
-							echo "#";
-							}else{
+						if($respuesta[0]->Respuesta == "1"){
 							echo $respuesta[0]->Categorias;
 							}
 						 ?>
@@ -218,7 +193,9 @@
 				</div>
 			</div>
 		</div>
-
+		<?php  		}else{	?>	
+		 <h1>ACCESO INVALIDO A TRAVES DE URL</h1>
+		<?php 			} 	?>
 	</div>
 	<?php 
 		if(isset($_POST['ver-contenido'])){
