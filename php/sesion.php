@@ -79,7 +79,12 @@
 		return $_SESSION['UsuarioModificacion'];
 	}
 	function GetIdUsuario(){
-		return $_SESSION['IdUsuario'];
+		if(isset($_SESSION['IdUsuario']) != null){
+			return $_SESSION['IdUsuario'];
+		}else{
+			return "0";
+		}
+		
 	}
 	function GetClaveCurso(){
 		return $_SESSION['IdCurso'];

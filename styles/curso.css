@@ -2,6 +2,7 @@
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	font-family: Arial;
 }
 .contenido{
 	display: flex;
@@ -55,12 +56,18 @@
 }
 .botones{
 	display: flex;
+	flex-flow: row;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+ form{
+	display: flex;
 	flex-flow: row wrap;
 	flex: 1 1 auto;
 	justify-content: center;
 	margin-top: 25px;
 }
-.botones > button{
+	form > button{
 	width: 40%;
 	margin: 5px;
 	height: 35px;

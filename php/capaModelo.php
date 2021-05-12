@@ -178,8 +178,10 @@
 			$sentencia->close();
 			$var->CerrarConexion();
 	}
-	
 	function ConsultaCurso($idCurso){
+		//gurdar el curso que vio para acceder a el en la de fases
+		SetClaveCurso($idCurso);
+
 		$preguntaSesion = GetLoggeo();
 		$idUsuario = 0;
 		if($preguntaSesion == "0"){
@@ -220,4 +222,35 @@
 		$sentencia->close();
 		$var->CerrarConexion();
 	}
+ 	function ListaDeFases($idCurso){
+ 		$idUsuario = GetIdUsuario();
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+
+ 		$sentencia = $mysqli->prepare("CALL SP_CursoListaFase(?,?)");
+ 		$sentencia->bind_param('ss',$idUsuario, $idCurso);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+
+ 					if($array[0]->Respuesta == "1"){
+ 						return $array;
+ 					}else{
+ 						echo 'El curso no contiene fases o alguien esta jugando con los parametros';
+ 					}
+ 					
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
  ?>

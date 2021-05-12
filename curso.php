@@ -111,10 +111,12 @@
 					
 				</div>
 				<div class="botones">
-					<button class="btn-estilo1">Comprar Curso</button>
-					<button class="btn-estilo2">Inscribirme al contenido gratuito</button>
-					<button class="btn-estilo3">Acceder al contenido</button>
-					<button class="btn-estilo2">Escribir duda</button>
+					<form method="post">
+						<button class="btn-estilo1" type="submit" name="comprar-curso">Comprar Curso</button>
+						<button class="btn-estilo2" type="submit" name="alta-curso">Inscribirme al contenido gratuito</button>
+						<button class="btn-estilo3" type="submit" name="ver-contenido">Acceder al contenido</button>
+						<button class="btn-estilo2" type="submit" name="crear-mensaje">Escribir duda</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -217,6 +219,11 @@
 			</div>
 		</div>
 	</div>
+	<?php 
+		if(isset($_POST['ver-contenido'])){
+			header("Location: vista-fases.php");
+		}
+	 ?>
 </body>
 </html>
 
