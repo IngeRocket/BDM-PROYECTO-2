@@ -107,10 +107,8 @@
 				}
 		
 		$sentencia->close();
-		$var->CerrarConexion();
-		
-		}
-
+		$var->CerrarConexion();	
+	}
 	function CrearFase($titulo, $descripcion, $video, $costo, $estadoPrecio, $pregunta){
 			$curso = GetClaveCurso(); 
 
@@ -254,8 +252,40 @@
  		$sentencia->close();
  		$var->CerrarConexion();
  	}
- 	function CompletarFase(){
+ 	function CompletarFase($idFase){
+ 		$idUsuario = GetIdUsuario();
+ 		$idCurso = GetClaveCurso();
 
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+
+ 		$sentencia = $mysqli->prepare("CALL SP_FaseCompletada(?,?,?)");
+ 		$sentencia->bind_param('sss', $idFase, $idCurso, $idUsuario);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+
+ 					if($array[0]->Respuesta == "1"){
+ 						echo'<script type="text/javascript">
+ 						    alert("'.$array[0]->Mensaje.'");
+ 						    </script>';
+ 						header("Location: vista-fases.php");
+ 					}else{
+ 						echo 'El curso no contiene fases o alguien esta jugando con los parametros';
+ 					}
+ 					
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
  	}
  	function AdquirirCurso($opcion){
  		$idUsuario = GetIdUsuario();
@@ -282,6 +312,77 @@
  					
  					$ruta = "Location: curso.php?Curso=".$idCurso;
  					header($ruta);
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function ConsultaFase($idFase){
+ 		 $idUsuario = GetIdUsuario();
+ 		 $idCurso = GetClaveCurso();
+ 		 $var = new Conexion;
+ 		 $mysqli = $var->getConexion();
+ 	
+ 		 $sentencia = $mysqli->prepare("CALL SP_ContenidoFase(?,?,?)");
+ 		 $sentencia->bind_param('sss',$idUsuario, $idCurso, $idFase);
+ 		 $sentencia->execute();
+ 		 
+ 		 if($sentencia){
+ 		 	$resultado = $sentencia->get_result();
+ 		 			while( $r = $resultado->fetch_assoc()) {
+ 		 			                $rows[] = $r;
+ 		 			         }                    
+ 		 			$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 		 			$array = (array)json_decode($ValorRegresado);
+ 					return $array;
+ 		 		}else{
+ 		 			echo "error en la llamada";
+ 		 		}
+ 		 
+ 		 $sentencia->close();
+ 		 $var->CerrarConexion();
+ 	}
+ 	function ConsultaArchivo($idFase){
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+	
+ 		$sentencia = $mysqli->prepare("CALL SP_ObtenerArchivoFase(?)");
+ 		$sentencia->bind_param('s', $idFase);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function ContenidoPrincipal($opcion){
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_Principal(?)");
+ 		$sentencia->bind_param('s', $opcion);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					return $array;
  				}else{
  					echo "error en la llamada";
  				}

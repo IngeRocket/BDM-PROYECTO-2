@@ -97,3 +97,43 @@
 	font-size: 1.2em;
 	margin-top: 5px;
 }
+form > button{
+	display: flex;
+	text-decoration: none;
+	justify-content: center;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px #6e3ca8;
+	border-radius: 10px;
+	color: black;
+	background-color: white;
+	width: 400px;
+	font-size: 1.0em;
+	text-align: center;
+	transition: all ease 0.3s;
+}
+.renglon > a{
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px #279b7c;
+	border-radius: 10px;
+	color: black;
+	background-color: white;
+	font-size: 1.0em;
+	width: 400px;
+	transition: all ease 0.3s;
+}
+
+.renglon > a:hover{
+	background-color: #279b7c;
+	color: white;
+}
+form > button:hover{
+	cursor: hand;
+	cursor: pointer;
+	background-color: #6e3ca8;
+	color: white;
+}

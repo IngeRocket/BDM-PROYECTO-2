@@ -33,6 +33,14 @@
 	justify-content: center;
 	color: white;
 	text-align: center;
+	font-size: 1.1em;
+}
+.t-precio{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	font-size: 1.1em;
+	color: white;
 }
 .t-enlace{
 	display: flex;

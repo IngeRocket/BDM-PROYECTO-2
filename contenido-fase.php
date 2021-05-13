@@ -9,7 +9,10 @@
 <body>
 	<?php include 'php/capaModelo.php'; ?>
 	<?php if (isset($_GET['Fase']) != null) {
-		echo $_GET['Fase'];
+		$var = $_GET['Fase'];
+		$array = ConsultaFase($var);
+		$archivos = ConsultaArchivo($var);
+		//echo count($array);
 	} ?>
 	<div class="contenedor">
 		<header class="header">
@@ -43,13 +46,26 @@
 				</div>
 			</div>
 		</header>
-		<div class="renglon"><label>Fase</label></div>
+		<div class="renglon"><label>
+			<?php if($array[0]->Respuesta == "1"){
+				echo $array[0]->Titulo;
+			} ?>
+		</label></div>
 		
 		<div class="contenido">
 
-		<div class="video"><video controls src="uploads/FLEXBOX.mp4"></video></div>
+		<div class="video"> <?php if ($array[0]->Respuesta == "1"){ ?>
+			<video controls src=<?php echo '"'.$array[0]->Video.'"' ?> >Video no soportado</video>
+		<?php } ?>
+		</div>
 		<div class="informacion">
-			<label>descripcion</label>
+			<label>
+				<?php 
+					if($array[0]->Respuesta == "1"){
+						echo $array[0]->Descripcion;
+					}
+				 ?>
+			</label>
 		</div>
 		</div>
 	
@@ -82,14 +98,27 @@
 			</div>
 		</div>
 
+	
+		<?php 
+			if( $array[0]->Respuesta == "1"){
+				if($array[0]->Completado == "0"){
+		?>
+			<div class="renglon">
+				<form method="post">
+				<button name="marcado">Marcar fase como completada</button>
+				</form>
+			</div>
+		<?php			
+				}
+			}
+		 ?>
 		<div class="renglon">
-			<button>Marcar fase como completada</button>
-		</div>
-
-		<div class="renglon">
-			<button>Volver a la lista de fases</button>
+			<a href="vista-fases.php">Volver a la lista de fases</a>
 		</div>
 	</div>
+	<?php if ( isset($_POST['marcado']) ){
+		CompletarFase($var);
+	} ?>
 </body>
 </html>
 
