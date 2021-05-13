@@ -223,9 +223,11 @@
 		}
 		if(isset($_POST['alta-curso'])){
 			//mandar a llamar una funcion para inscribir y recargar pagina
+			AdquirirCurso(1);
 		}
 		if(isset($_POST['comprar-curso'])){
 			//mandar a llamar funcion para comprar y recargar pagina
+			AdquirirCurso(2);
 		}
 		if(isset($_POST['crear-mensaje'])){
 			//ir a otra pagina para crear el mensaje de dua sobre el curso

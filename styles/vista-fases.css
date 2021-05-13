@@ -30,6 +30,17 @@
 	color: white;
 	font-size: 1.1em;
 }
+.b-lista{
+	display: flex;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px gray;
+	border-radius: 10px;
+	background-color: gray;
+	color: white;
+	font-size: 1.1em;
+}
 
 .l-nombre{
 	display: flex;
@@ -103,4 +114,7 @@
 	border-radius: 10px;
 	color: black;
 	font-size: 1.1em;
+}
+a.fase-enlace{
+	text-decoration: none;
 }

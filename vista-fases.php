@@ -17,13 +17,13 @@
 					<label>
 						<?php 
 							if($array[0]->Respuesta=="1"){
-								echo $array[0]->Curso;
+								echo 'Nombre del curso: '.$array[0]->Curso;
 							}else{
-								echo "Titulo del curso";
+								echo "Nombre del curso";
 							}
 						 ?>
 					</label>
-					<label>Fases </label>
+					<label>Fases</label>
 				</div>
 
 				<div class="cabecera">	
@@ -36,27 +36,21 @@
 					<?php 
 						if($array[0]->Respuesta=="1"){
 							for($i = 0; $i < count($array); $i++){
-					?>
-						<div class="lista">	
-							<div class="l-nombre"><p><?php echo $array[$i]->Titulo; ?></p></div>
-							<div class="l-descripcion"><p><?php echo $array[$i]->Descripcion; ?></p></div>
-							<div class="l-archivos"><p><?php echo $array[$i]->CantidadArchivos; ?></p></div>
-							<div class="l-estado"><p><?php 
-								if($array[$i]->Progreso=="0"){
-									echo "";
-								}else{
-									echo "Completado";
-								}
+							
+						if($array[$i]->Gratis == "1" || $array[$i]->Estado == "1" ){
+									//significa que esta adquirido
+						Adquirido($array[$i]->ID ,$array[$i]->Titulo, $array[$i]->Descripcion, $array[$i]->CantidadArchivos, $array[$i]->Progreso);
 
-							 ?></p></div>
-						</div>
-					<?php
-							}//cierre de for
+						}else{
+									//el curso no ha sido comprado, solo se inscribió
+						Bloqueado($array[$i]->Titulo, $array[$i]->Descripcion, $array[$i]->CantidadArchivos);
 						
+						}
+				
+							}//cierre de for						
 						} //cierre de if
 					 ?>
 					
-
 			</div>
 		</div>
 		<div class="centrado">
@@ -65,3 +59,35 @@
 	</div>
 </body>
 </html>
+
+
+<?php 
+	function Adquirido($id, $titulo, $descripcion, $cantidad, $progreso){
+		$aux = 'contenido-fase.php?Fase='.$id;
+		if ($progreso == "0"){
+			$progreso = " ";
+		}else{
+			$progreso = "Completado";
+		}
+
+		echo '<a class="fase-enlace" href="'.$aux.'">
+		<div class="lista">	
+			<div class="l-nombre"><p>'.$titulo.'</p></div>
+			<div class="l-descripcion"><p>'.$descripcion.'</p></div>
+			<div class="l-archivos"><p>'.$cantidad.'</p></div>
+			<div class="l-estado"><p>'.$progreso.'</p></div>
+		</div>
+		</a>';
+	} 
+
+	function Bloqueado($titulo, $descripcion, $cantidad){
+		echo'<div class="b-lista">	
+				<div class="l-nombre"><p>'.$titulo.'</p></div>
+				<div class="l-descripcion"><p>'.$descripcion.'</p></div>
+				<div class="l-archivos"><p>'.$cantidad.'</p></div>
+				<div class="l-estado"><p>Bloqueado</p></div>
+				</div>';
+	}
+
+	
+ ?>
