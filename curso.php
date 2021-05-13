@@ -93,9 +93,29 @@
 						if (GetRolUsuario() == "Alumno"){
 					?>					
 					<form method="post">
-						<button class="btn-estilo1" type="submit" name="comprar-curso">Comprar Curso</button>
-						<button class="btn-estilo2" type="submit" name="alta-curso">Inscribirme al contenido gratuito</button>
-						<button class="btn-estilo3" type="submit" name="ver-contenido">Acceder al contenido</button>
+						<?php 
+							if ($respuesta[0]->Precio == "0.00"){
+								//lo puedo comprar
+								if($respuesta[0]->Comprado == "0"){
+									//boton de registro
+								echo '<button class="btn-estilo1" type="submit" name="comprar-curso">Comprar Curso</button>';
+								}
+								if($respuesta[0]->Comprado == "1"){
+								echo '<button class="btn-estilo3" type="submit" name="ver-contenido">Acceder al contenido</button>';
+								}
+							}else{
+								//no es gratis, falta saber si tiene fases gratis
+								if ($respuesta[0]->Comprado == "0"){
+								echo '<button class="btn-estilo1" type="submit" name="comprar-curso">Comprar Curso</button>';
+								}
+								if($respuesta[0]->Registrado == "0" && $respuesta[0]->FasesGratuitas != "0"){
+								echo '<button class="btn-estilo2" type="submit" name="alta-curso">Inscribirme al contenido gratuito</button>';
+								}
+								if($respuesta[0]->Registrado == "1"){
+								echo '<button class="btn-estilo3" type="submit" name="ver-contenido">Acceder al contenido</button>';
+								}
+							}
+						 ?>
 						<button class="btn-estilo2" type="submit" name="crear-mensaje">Escribir duda</button>
 					</form>
 					<?php
@@ -213,3 +233,4 @@
 	 ?>
 </body>
 </html>
+
