@@ -8,6 +8,9 @@
 </head>
 <body>
 	<?php include 'php/capaModelo.php'; ?>
+	<?php if (isset($_GET['Fase']) != null) {
+		echo $_GET['Fase'];
+	} ?>
 	<div class="contenedor">
 		<header class="header">
 			<div class="menu">
