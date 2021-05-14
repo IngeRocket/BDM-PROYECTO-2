@@ -23,7 +23,9 @@
 					
 
 					if($array[0]->Respuesta == 0){
-						echo "por ahi no es";
+						echo'<script type="text/javascript">
+					    alert("'.$array[0]->Mensaje.'");
+					    </script>';
 						SetLoggeo($array[0]->Respuesta);	
 					}else{
 						echo "usuario real";
@@ -383,6 +385,66 @@
  					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
  					$array = (array)json_decode($ValorRegresado);
  					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function HistorialUsuario($opcion){
+ 		$idUsuario = GetIdUsuario();
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_HistorialUsuario(?,?)");
+ 		$sentencia->bind_param('ss', $idUsuario, $opcion);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					if($array[0]->Respuesta == "0"){
+ 						echo'<script type="text/javascript">
+ 							 alert("'.$array[0]->Mensaje.'");
+ 							 </script>';
+ 					}
+ 					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function PreguntaCalificado(){
+ 		$idUsuario = GetIdUsuario();
+ 		$idCurso = GetClaveCurso();
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_CursoCalificado(?,?)");
+ 		$sentencia->bind_param('ss', $idUsuario, $idCurso);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					if ($array[0]->Respuesta == "0"){
+ 						return false;
+ 					}else{
+ 						return true;
+ 					}
  				}else{
  					echo "error en la llamada";
  				}

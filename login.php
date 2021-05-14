@@ -4,6 +4,8 @@
 	<title>login</title>
 	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<link rel="stylesheet" type="text/css" href="styles/login.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/select-memoria.js"></script>
 </head>
 <body>
 	<?php include 'php/capaModelo.php'; ?>
@@ -26,7 +28,7 @@
 		<div class="contenido">
 			<form method="post">
 			<label>Tipo de cuenta</label>
-			<select name="u-cuenta">
+			<select id="cuenta" name="u-cuenta">
 				<option value="1">Alumno</option>
 				<option value="2">Instructor</option>
 			</select>
@@ -48,9 +50,13 @@
 			$cuenta = $_POST['u-cuenta'];
 			$usuario = $_POST['u-name'];
 			$clave = $_POST['u-pass'];
-
 			//echo $cuenta ." ". $usuario." ". $clave;
 			login($usuario, $clave, $cuenta);
+	?>
+	<script type="text/javascript">
+		Memoria(<?php echo $cuenta; ?>);
+	</script>
+	<?php		
 		}
 	 ?>
 </body>

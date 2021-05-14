@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Vista Fases</title>
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<link rel="stylesheet" type="text/css" href="styles/vista-fases.css">
 </head>
 <body>
@@ -10,6 +11,46 @@
 		$array = ListaDeFases($var);
 	 ?>
 	<div class="contenedor">
+		<header class="header">
+			<div class="menu">
+				<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
+				<div class="categorias">
+					<div class="categoria">Mas vendidos</div>
+					<div class="categoria">Mas populares</div>
+					<div class="categoria">Mas recientes</div>
+					<div class="categoria">Mejor promediados</div>
+				</div>
+				<div class="categorias">
+					<div class="categoria">Categorias</div>
+				</div>
+				<div class="opciones">
+					<div class="opc">
+						<?php $prueba = GetLoggeo(); ?>
+						<label>
+							<?php 
+								if($prueba != "0"){
+									$nombre = GetNombreUsuario();
+									echo "<a href='configuracion.php'>".$nombre."</a>";
+								}else{
+									echo '<a href="login.php">Inicio de Sesion</a>';
+								}
+						 	?>	 	
+						 </label>
+					</div>
+					<div class="opc">
+						<label>
+								<?php 
+									if($prueba != "0"){
+										echo '<a href="despedida.php">Cerrar Sesion</a>';
+									}else{
+										echo '<a href="registro.php">Registro</a>';
+									}
+							 	?>	
+						</label>
+					</div>
+				</div>
+			</div>
+		</header>	
 		<div class="contenido">
 			
 			<div class="elementos">
@@ -66,7 +107,9 @@
 					}
 				}
 				if($contador == count($array)){
-					echo '<a class="calificar" href=calificar-curso.php?Curso='.GetClaveCurso().'>Calificar curso</a>';
+					if( PreguntaCalificado() ){
+						echo '<a class="calificar" href=calificar-curso.php?Curso='.GetClaveCurso().'>Calificar curso</a>';
+					}	
 				}
 			}
 			 ?>

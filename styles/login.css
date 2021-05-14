@@ -38,7 +38,7 @@ form > input, form > select {
 	width: 50%;
 	text-align: center;
 	justify-content: center;
-	height: 30px;
+	height: 40px;
 	border-radius: 10px;
 	border: solid 1px gray;
 }

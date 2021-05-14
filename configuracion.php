@@ -25,7 +25,7 @@
 							?>
 						
 						<div class="panel">
-							<div class="panel-opc"> <a href="#">Mis Cursos</a></div>
+							<div class="panel-opc"> <a href="historial.php">Mis Cursos</a></div>
 							<div class="panel-opc"> <a href="#">Mensajes</a></div>
 						</div>
 						<?php 
