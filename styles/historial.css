@@ -1,0 +1,149 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+button:hover{
+	cursor: hand;
+	cursor: pointer;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+
+.pantalla{
+	display: flex;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 10px;
+	background-color: gray;
+}
+.p-panel{
+	display: flex;
+	flex-flow: column;
+	max-width: 20%;
+	flex: 1 1 auto;
+}
+.panel{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	align-items: center;
+	border: solid white 1px;
+	border-radius: 15px;
+	margin: 10px;
+	padding: 10px;
+}
+.panel > select{
+	border: solid 1px gray;
+	height: 40px;
+	border-radius: 5px;
+	width: 80%;
+	font-size: 1.2em;
+}
+.panel > button{
+	margin-top: 10px;
+	font-size: 1.2em;
+	width: 80%;
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+}
+.p-resultado{
+	display: flex;
+	flex-flow: column;
+	max-width: 80%;
+	flex: 1 1 auto;
+}
+.buscador{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+}
+.buscador > .caja{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 80%;
+}
+.caja > input{
+	width: 100%;
+	font-size: 1.2em;
+	text-align: center;
+}
+.boton > button{
+	width: 100%;
+	font-size: 1.2em;
+	text-align: center;
+}
+.buscador > .boton{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 20%;
+}
+.r-contenido{
+	display: flex;
+	flex: 1 1 auto;
+	flex-flow: column;
+}
+.cabecera{
+	margin-top: 10px;
+	display: flex;
+	flex: 1 1 auto;
+	border-radius: 15px;
+	border: solid 1px blue;
+	padding: 10px;
+	background-color: orange;
+}
+.tarjeta{
+	margin-top: 10px;
+	display: flex;
+	flex: 1 1 auto;
+	border-radius: 15px;
+	border: solid 1px blue;
+	padding: 10px;
+}
+
+.t-imagen{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 20%;
+	justify-content: center;
+}
+.t-imagen > img{
+	width: 100%;
+}
+.t-titulo{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 60%;
+	flex-flow: column;
+}
+.titulo-nombre{
+	display: flex;
+	max-height: 80%;
+	flex: 1 1 auto;
+}
+.titulo-categoria{
+	display: flex;
+	max-height: 20%;
+	flex: 1 1 auto;
+}
+.t-progreso{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 10%;
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+}
+.t-estado{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 10%;
+	background-color: skyblue;
+	justify-content: center;
+	align-items: center;
+}
