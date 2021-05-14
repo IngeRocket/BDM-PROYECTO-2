@@ -118,7 +118,7 @@ button:hover{
 .t-titulo{
 	display: flex;
 	flex: 1 1 auto;
-	max-width: 60%;
+	max-width: 50%;
 	flex-flow: column;
 }
 .titulo-nombre{
@@ -144,6 +144,14 @@ button:hover{
 	flex: 1 1 auto;
 	max-width: 10%;
 	background-color: skyblue;
+	justify-content: center;
+	align-items: center;
+}
+.t-e-compra{
+	display: flex;
+	flex: 1 1 auto;
+	max-width: 10%;
+	background-color: white;
 	justify-content: center;
 	align-items: center;
 }

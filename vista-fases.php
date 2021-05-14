@@ -56,6 +56,21 @@
 		<div class="centrado">
 			<a href=<?php echo "'curso.php?Curso=".GetClaveCurso()."'"; ?> > Volver a la pantalla del curso</a>
 		</div>
+		<div class="centrado">
+			<?php 
+			if ($array[0]->Respuesta == "1"){
+				$contador = 0;
+				for ($i=0; $i < count($array) ; $i++) { 
+				if($array[$i]->Progreso == "1"){
+					$contador++;
+					}
+				}
+				if($contador == count($array)){
+					echo '<a class="calificar" href=calificar-curso.php?Curso='.GetClaveCurso().'>Calificar curso</a>';
+				}
+			}
+			 ?>
+		</div>
 	</div>
 </body>
 </html>

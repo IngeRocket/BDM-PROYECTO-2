@@ -118,3 +118,12 @@
 a.fase-enlace{
 	text-decoration: none;
 }
+
+a.calificar{
+	background-color: white; 
+	border: solid 1px #ff7f27;
+}
+a.calificar:hover{
+	background-color: #ff7f27; 
+	color: white;
+}
