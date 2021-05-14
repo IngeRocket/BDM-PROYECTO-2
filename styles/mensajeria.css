@@ -1,0 +1,120 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+
+.mensajeria:hover{
+	cursor: hand;
+	cursor: pointer;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+	background-color: gray;
+}
+.pantalla{
+	display: flex;
+	flex: 1 1 auto;
+	background-color: orange;
+	padding: 10px;
+}
+.chats{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	max-width: 20%;
+	background-color: gray;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 10px;
+}
+.chats > .mensajeria{
+	display: flex;
+	flex-flow: column;
+	background-color: white;
+	border: solid gray 1px;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+}
+.mensajeria > .curso{
+	display: flex;
+	justify-content: flex-start;
+}
+.mensajeria > .nombre{
+	display: flex;
+	justify-content: flex-start;
+}
+.mensajeria > .ultimo{
+	display: flex;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.historial{
+	display: flex;
+	flex-flow: column;
+	background-color: gray;
+	flex: 1 1 auto; 
+	height: 800px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+.mensajes{
+	display: flex;
+	flex: 1 1 auto;
+	flex-flow: column;
+	background-color: #c3c3c3;
+	overflow-y: scroll;
+	height: 90%;
+}
+.mensaje{
+	display: flex;
+	flex: 1 1 auto;
+	background-color: red;
+}
+.mensaje > input{
+	width: 90%;
+}
+.mensaje > button{
+	width: 10%;
+}
+.m-envio, .m-respuesta{
+	max-height: 50px;
+	display: flex;
+	flex: 1 1 auto;
+	border-radius: 10px;
+	border: solid 1px purple;
+	margin: 10px;
+	padding: 10px;
+	align-items: center;
+	font-size: 1.0em;
+}
+.m-envio{
+	justify-content: flex-end;
+}
+.m-respuesta{
+	justify-content: flex-start;
+	background-color: purple;
+	color: white;
+}
+
+.boton{
+	display: flex;
+	flex: 1 1 auto;
+	background-color: white;
+	justify-content: flex-end;
+}
+.boton > button{
+	margin: 10px;
+	width: 200px;
+	font-size: 1.1em;
+	padding: 5px;
+	border-radius: 10px;
+	border: solid 1px gray;
+	background-color: white;
+
+}
