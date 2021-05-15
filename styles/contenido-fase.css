@@ -137,3 +137,6 @@ form > button:hover{
 	background-color: #6e3ca8;
 	color: white;
 }
+a.personalizado{
+	text-decoration: none;
+}

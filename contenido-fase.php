@@ -68,33 +68,34 @@
 			</label>
 		</div>
 		</div>
-	
-		<div class="renglon">
-			<label>Archivos de la fase</label>
-		</div>
+		<?php 
+			if($archivos[0]->Respuesta == "1"){
+					echo '<div class="renglon">
+						<label>Archivos de la fase</label>
+						</div>';
+			}
+		 ?>
 			
 		<div class="grupo">
 			<div class="v-archivo">
-				<div class="elemento">
-					<div class="a-icono"><img src="img/iconos/i-web.png"></div>
-					<div class="a-nombre">pagina web</div>
-				</div>
-				<div class="elemento">
-					<div class="a-icono"><img src="img/iconos/i-documento.png"></div>
-					<div class="a-nombre">documento</div>
-				</div>
-				<div class="elemento">
-					<div class="a-icono"><img src="img/iconos/i-contenedor.png"></div>
-					<div class="a-nombre">contenedor</div>
-				</div>
-				<div class="elemento">
-					<div class="a-icono"><img src="img/iconos/i-imagen.png"></div>
-					<div class="a-nombre">imagen</div>
-				</div>
-				<div class="elemento">
-					<div class="a-icono"><img src="img/iconos/i-video.png"></div>
-					<div class="a-nombre">video</div>
-				</div>
+				<?php 
+					if($archivos[0]->Respuesta == "1"){
+						for ($i=0; $i < count($archivos) ; $i++) { 
+							$ruta = $archivos[$i]->Ruta;
+							$ruta = pathinfo($ruta);
+							$extension = $ruta['extension'];
+							if($extension == "PNG" || $extension == "png" || $extension == "jpeg" || $extension == "JPEG" ||$extension == "bmp" ||$extension == "bmp"){
+								Imagen($archivos[$i]->Ruta);
+							}else{
+								if($extension == "mp4" || $extension == "MP4" || $extension == "avi" || $extension == "AVI") {
+									Video($archivos[$i]->Ruta);
+								}else{
+									Documento();
+								}
+							}
+						}
+					}
+				 ?>
 			</div>
 		</div>
 
@@ -120,6 +121,57 @@
 		CompletarFase($var);
 	} ?>
 </body>
+<?php 
+	function Imagen($ruta){
+	$nombre = pathinfo($ruta);
+	$nombre = $nombre['filename']; 
+	echo 	'<a class="personalizado" href="'.$ruta.'" download><div class="elemento">
+				<div class="a-icono"><img src="img/iconos/i-imagen.png"></div>
+				<div class="a-nombre">'.$nombre.'</div>
+			</div></a>';
+	}
+	function Video($ruta){
+	$nombre = pathinfo($ruta);
+	$nombre = $nombre['filename']; 
+	echo 	'<a class="personalizado" href="'.$ruta.'" download><div class="elemento">
+				<div class="a-icono"><img src="img/iconos/i-video.png"></div>
+				<div class="a-nombre">'.$nombre.'</div>
+			</div></a>';
+	}
+	function Documento($ruta){
+		$nombre = pathinfo($ruta);
+		$nombre = $nombre['filename']; 
+		echo 	'<a class="personalizado" href="'.$ruta.'" download><div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-documento.png"></div>
+					<div class="a-nombre">'.$nombre.'</div>
+				</div></a>';
+	}
+
+ ?>
+ 
 </html>
 
 		
+<!--
+	<div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-web.png"></div>
+					<div class="a-nombre">pagina web</div>
+				</div>
+				<div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-documento.png"></div>
+					<div class="a-nombre">documento</div>
+				</div>
+				<div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-contenedor.png"></div>
+					<div class="a-nombre">contenedor</div>
+				</div>
+				<div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-imagen.png"></div>
+					<div class="a-nombre">imagen</div>
+				</div>
+				<div class="elemento">
+					<div class="a-icono"><img src="img/iconos/i-video.png"></div>
+					<div class="a-nombre">video</div>
+				</div>
+
+				-->

@@ -65,5 +65,14 @@
 				<a href="vista-fases.php">Cancelar</a>
 			</div>
 </div>
+<?php 
+	if(isset($_POST['submit'])){
+		$comentario = $_POST['comentario'];
+		$puntuacion = $_POST['calificacion'];
+
+		CalificarCurso($comentario, $puntuacion);
+		
+	}
+ ?>
 </body>
 </html>

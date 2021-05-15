@@ -481,4 +481,35 @@
  		$sentencia->close();
  		$var->CerrarConexion();
  	}
+ 	function CalificarCurso($comentario, $puntuacion){
+ 		$idUsuario = GetIdUsuario();
+ 		$idCurso = GetClaveCurso();
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_CalificarCurso(?,?,?,?)");
+ 		$sentencia->bind_param('ssss', $idUsuario, $idCurso, $comentario, $puntuacion);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					if ($array[0]->Respuesta == "1"){
+ 						echo'<script type="text/javascript">
+ 							 alert("'.$array[0]->Mensaje.'");
+ 							 </script>';
+ 						header("Location: vista-fases.php");
+ 					}
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
  ?>
