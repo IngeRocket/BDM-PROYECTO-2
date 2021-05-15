@@ -182,7 +182,7 @@
 					<label>
 						<?php 
 						if($respuesta[0]->Respuesta == "1"){
-								if($respuesta[0]->Calificacion = "0.00"){
+								if($respuesta[0]->Calificacion == "0.00"){
 									echo "Sin Calificar";
 								}else{
 									echo $respuesta[0]->Calificacion;
