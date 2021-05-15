@@ -16,7 +16,7 @@
 						<div class="panel">
 							<div class="panel-opc"> <a href="crear-curso.php">Crear Curso</a></div>
 							<div class="panel-opc"> <a href="#">Mis cursos</a></div>
-							<div class="panel-opc"> <a href="#">Ventas</a></div>
+							<div class="panel-opc"> <a href="ventas.php">Ventas</a></div>
 						</div>
 						<?php 
 							}

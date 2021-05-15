@@ -422,6 +422,35 @@
  		$sentencia->close();
  		$var->CerrarConexion();
  	}
+ 	function HistorialInstructor($opcion){
+ 		$idUsuario = GetIdUsuario();
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_HistorialInstructor(?,?)");
+ 		$sentencia->bind_param('ss', $idUsuario, $opcion);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					if($array[0]->Respuesta == "0"){
+ 						echo'<script type="text/javascript">
+ 							 alert("'.$array[0]->Mensaje.'");
+ 							 </script>';
+ 					}
+ 					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
  	function PreguntaCalificado(){
  		$idUsuario = GetIdUsuario();
  		$idCurso = GetClaveCurso();

@@ -1,0 +1,126 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+
+.controles{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	margin-top: 10px;
+}
+.controles > form{
+	display: flex;
+	padding: 10px;
+	margin: 10px;
+	align-items: center;
+}
+form > label {
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+form  > select{
+	margin-right: 10px;
+	width: 200px;
+	height: 50px;
+	font-size: 1.1em;
+	border: solid 1px gray;
+	border-radius: 10px;
+}
+form > button{
+	width: 100px;
+	height: 50px;
+	font-size: 1.1em;
+	border: solid 1px gray;
+	border-radius: 10px;
+}
+.resultado{
+	display: flex;
+	flex: 1 1 auto;
+	flex-flow: column;
+}
+.tarjeta{
+	display: flex;
+	flex: 1 1 auto;
+	border-top: solid 2px gray;
+	border-bottom: solid 2px gray;
+	background-color: white;
+	padding: 10px;
+	margin: 10px;
+}
+.t-img > img{
+	width: 100%;
+}
+.t-img{
+	display: flex;
+	width: 20%;
+}
+.info{
+	display: flex;
+	flex-flow: column;
+	width: 20%;
+}
+.t-titulo{
+	display: flex;
+	flex: 1 1 auto;
+	height: 80%;
+}
+.t-categoria{
+	display: flex;
+	flex: 1 1 auto;
+	height: 20%;
+}
+
+.t-precio{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.t-alumnos{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.t-calificacion{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.t-fases{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.t-ventas{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.t-ganancias{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+
+.enlace{
+	display: flex;
+	flex: 1 1 auto;
+}
