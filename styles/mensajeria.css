@@ -74,12 +74,11 @@
 .mensaje{
 	display: flex;
 	flex: 1 1 auto;
-	background-color: red;
 }
-.mensaje > input{
+.mensaje  > input{
 	width: 90%;
 }
-.mensaje > button{
+.mensaje  > button{
 	width: 10%;
 }
 .m-envio, .m-respuesta{

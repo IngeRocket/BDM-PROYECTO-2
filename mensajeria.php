@@ -13,24 +13,42 @@
 				<button id="reload">Recargar</button>
 			</div>
 		<div class="pantalla">
-			<div class="chats">
-				<div class="mensajeria" elemento="1">
-					<div class="curso"><label>Nombre de curso</label></div>
-					<div class="nombre"><label>Profesor</label></div>
-				<!--	<div class="ultimo"><label>ultimo mensaje</label></div> -->
-				</div>
+			<div class="chats" id="grupo-chats">
+
 			</div>
 			<div class="historial">
-				<div class="mensajes" id="chat">
-					<div class="m-envio">Como estas?</div>
-					<div class="m-respuesta">Cansado, y tu?</div>
+				<div class="mensajes" id="chat"> <!-- AQUI SE INSERTAN LOS MENSAJES, ¡NO BORRAR! -->
 				</div>
 				<div class="mensaje">
-					<input type="text" id="caja-texto">
-					<button id="EnviarMensaje">Enviar</button>
+						<input type="text" name="caja" id="caja-texto">
+						<button name="enviar" id="EnviarMensaje">Enviar</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php 
+		if(GetRolUsuario()=="Alumno"){
+			echo "Estas en el rol de alumno";
+		//siempre mandas el id del alumno
+		$var = GrupoChat();	
+		for ($i=0; $i < count($var); $i++) { 
+			echo '<script type="text/javascript">
+			NuevoGrupoInstructor("'.$var[$i]->IdCurso.'","'.$var[$i]->IdUsuario.'","'.$var[$i]->Curso.'","'.$var[$i]->Nombre.'","'.$var[$i]->Mensaje.'");
+				</script>';
+			}
+		}else{
+			echo "Estas en el rol de instructor";
+		//debo guardar el id del alumno
+		$var = GrupoChat();
+		for ($i=0; $i < count($var); $i++) { 
+			echo '<script type="text/javascript">
+			NuevoGrupoAlumno("'.$var[$i]->IdCurso.'","'.$var[$i]->IdUsuario.'","'.$var[$i]->Curso.'","'.$var[$i]->Nombre.'","'.$var[$i]->Mensaje.'");
+				</script>';
+			}
+		}
+	?>
+	<script type="text/javascript">
+		SetRolJS(<?php echo "'".GetRolUsuario()."'"; ?>);
+	</script>
 </body>
 </html>

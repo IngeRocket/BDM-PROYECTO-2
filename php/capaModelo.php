@@ -512,4 +512,88 @@
  		$sentencia->close();
  		$var->CerrarConexion();
  	}
+ 	function GrupoChat(){
+ 		$opcion = 0;
+ 		if(GetRolUsuario()=="Alumno"){
+ 			$opcion = 1;
+ 		}
+ 		$idUsuario = GetIdUsuario();
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_ListaMensajes(?,?)");
+ 		$sentencia->bind_param('ss', $idUsuario, $opcion);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function SubirDuda($idUsuario, $idCurso, $mensaje){
+ 		$rol = 0;
+ 		if(GetRolUsuario()=="Alumno"){
+ 			$rol = 1;
+ 		}
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_NuevoMensaje(?,?,?,?)");
+ 		$sentencia->bind_param('ssss', $idUsuario, $idCurso, $mensaje, $rol);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					if ($array[0]->Respuesta == "1"){
+ 						echo'<script type="text/javascript">
+ 							 alert("Duda realizada con exito!");
+ 							 </script>';
+ 							 $string = "Location: curso.php?Curso=".GetClaveCurso();
+ 						header($string);
+ 					}
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
+ 	function ContestarChat($idAlumno, $idCurso, $mensaje){
+ 		$rol = 0;
+ 		if(GetRolUsuario()=="Alumno"){
+ 			$rol = 1;
+ 		}
+
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_NuevoMensaje(?,?,?,?)");
+ 		$sentencia->bind_param('ssss', $idAlumno, $idCurso, $mensaje, $rol);
+ 		$sentencia->execute();
+ 				if($sentencia){
+ 			
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
+ 	}
  ?>
