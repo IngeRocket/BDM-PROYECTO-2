@@ -24,6 +24,14 @@ $(document).ready( function (){
 		Peticion(curso, alumno);
 	});
 
+	$("body").on("click","#reload", function(){
+		window.location.reload();
+	});
+
+	$("body").on("click","#volver", function(){
+		window.location.href="configuracion.php";
+	});
+	
 });
 function SetRolJS(rol){
 	MiRol = rol;
