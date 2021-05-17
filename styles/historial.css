@@ -18,7 +18,8 @@ button:hover{
 	flex: 1 1 auto;
 	margin: 10px;
 	padding: 10px;
-	background-color: gray;
+	border: solid 1px gray;
+	border-radius: 15px;
 }
 .p-panel{
 	display: flex;
@@ -99,16 +100,16 @@ button:hover{
 	display: flex;
 	flex: 1 1 auto;
 	border-radius: 15px;
-	border: solid 1px blue;
+	border: solid 1px gray;
 	padding: 10px;
-	background-color: orange;
+	max-height: 40px;
 }
 .tarjeta{
 	margin-top: 10px;
 	display: flex;
 	flex: 1 1 auto;
 	border-radius: 15px;
-	border: solid 1px blue;
+	border: solid 1px gray;
 	padding: 10px;
 }
 
@@ -117,6 +118,7 @@ button:hover{
 	flex: 1 1 auto;
 	max-width: 20%;
 	justify-content: center;
+	align-items: center;
 }
 .t-imagen > img{
 	width: 100%;
@@ -131,17 +133,19 @@ button:hover{
 	display: flex;
 	max-height: 80%;
 	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
 }
 .titulo-categoria{
 	display: flex;
 	max-height: 20%;
 	flex: 1 1 auto;
+	justify-content: center;
 }
 .t-progreso{
 	display: flex;
 	flex: 1 1 auto;
 	max-width: 10%;
-	background-color: white;
 	justify-content: center;
 	align-items: center;
 }
@@ -149,7 +153,6 @@ button:hover{
 	display: flex;
 	flex: 1 1 auto;
 	max-width: 10%;
-	background-color: skyblue;
 	justify-content: center;
 	align-items: center;
 }
@@ -157,7 +160,6 @@ button:hover{
 	display: flex;
 	flex: 1 1 auto;
 	max-width: 10%;
-	background-color: white;
 	justify-content: center;
 	align-items: center;
 }

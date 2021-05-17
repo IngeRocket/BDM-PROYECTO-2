@@ -51,7 +51,7 @@
 		<form method="post">
 			<div class="titulo"><label>Puntuacion (0 - 100)</label></div>
 			<div class="puntuacion">
-				<input type="number" max="100" min="0" step="1" name="calificacion">
+				<input type="number" max="100" min="1" step="0.25" name="calificacion">
 			</div>
 			<div class="titulo"><label>Comentario / Opinion del curso</label></div>
 			<div class="caja">

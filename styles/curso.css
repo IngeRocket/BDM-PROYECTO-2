@@ -133,3 +133,28 @@
 .negritas{
 	font-weight: bold;
 }
+.renglon{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.renglon > a{
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	width: auto;
+	border-radius: 15px;
+	border: solid 1px #2452bd;
+	font-size: 1.2em;
+	text-align: center;
+	background-color: #2452bd;
+	transition: all ease 0.3s;
+}
+
+.renglon > a:hover{
+	cursor: hand;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}

@@ -16,7 +16,7 @@
 	padding: 10px;
 	border-radius: 10px;
 	font-size: 1.1em;
-	background-color: orange;
+	border: solid 1px gray;
 }
 .tarjeta > .nombre{
 	display: flex;
@@ -24,7 +24,6 @@
 	align-items: center;
 	flex: 1 1 auto;
 	width: 20%;
-	background-color: gray;
 }
 .tarjeta > .comentario{
 	display: flex;
@@ -32,7 +31,6 @@
 	align-items: center;
 	flex: 1 1 auto;
 	width: 60%;
-	background-color: skyblue;
 }
 .tarjeta > .calificacion{
 	display: flex;
@@ -40,10 +38,57 @@
 	align-items: center;
 	flex: 1 1 auto;
 	width: 20%;
-	background-color: gray;
 }
 .area{
 	display: flex;
 	flex-flow: column;
 	flex: 1 1 auto;
+}
+.renglon{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	padding: 10px;
+}
+.renglon > select{
+	height: 40px;
+	font-size: 1.1em;
+}
+.renglon > button{
+	margin-left: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1.1em;
+	background-color: white;
+	border: solid 1px #8a3dba;
+	border-radius: 10px;
+	transition: all ease 0.3s;
+}
+.renglon > button:hover{
+	cursor: hand;
+	cursor: pointer;
+	color: white;
+	background-color: #8a3dba;
+	border: solid 1px #8a3dba;
+}
+.regreso{
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 20px;
+}
+.regreso > a{
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-size: 1.1em;
+	background-color: #2452bd;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid 1px #2452bd;
+	transition: all ease 0.3s;
+}
+.regreso > a:hover{
+	background-color: white;
+	color: black;
 }

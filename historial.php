@@ -104,7 +104,7 @@
 											<div class="t-imagen"><img src="'.$array[$i]->Foto.'"></div>
 											<div class="t-titulo">
 											<div class="titulo-nombre">'.$array[$i]->TituloCurso.'</div>
-											<div class="titulo-categoria">'.$array[$i]->Categorias.'</div>
+											<div class="titulo-categoria">Categorias: '.$array[$i]->Categorias.'</div>
 											</div>
 											<div class="t-progreso">'.$array[$i]->Progreso.'/'.$array[$i]->Fases.'</div>
 											<div class="t-estado">'.$estado.'</div>

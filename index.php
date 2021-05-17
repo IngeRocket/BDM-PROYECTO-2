@@ -66,7 +66,6 @@
 								echo 	'<div class="tarjeta-cuadro">
 											<div class="t-imagen"> <img src="'.$array[$i]->Miniatura.'"></div>
 											<div class="t-titulo"><label>'.$array[$i]->Titulo.'</label></div>
-											<div class="t-descripcion"><p>'.$array[$i]->Descripcion.'</p></div>
 											<div class="t-categoria"><p>Categorias: '.$array[$i]->Categorias.'</p></div>
 											<div class="t-precio"><p>'.$precio.'</p></div>
 											<div class="t-enlace"><a href="curso.php?Curso='.$array[$i]->ID.'">Ver curso</a></div>
@@ -90,7 +89,6 @@
 								echo 	'<div class="tarjeta-cuadro">
 											<div class="t-imagen"> <img src="'.$array[$i]->Miniatura.'"></div>
 											<div class="t-titulo"><label>'.$array[$i]->Titulo.'</label></div>
-											<div class="t-descripcion"><p>'.$array[$i]->Descripcion.'</p></div>
 											<div class="t-categoria"><p>Categorias: '.$array[$i]->Categorias.'</p></div>
 											<div class="t-precio"><p>'.$precio.'</p></div>
 											<div class="t-enlace"><a href="curso.php?Curso='.$array[$i]->ID.'">Ver curso</a></div>
@@ -114,7 +112,6 @@
 							echo 	'<div class="tarjeta-cuadro">
 										<div class="t-imagen"> <img src="'.$array[$i]->Miniatura.'"></div>
 										<div class="t-titulo"><label>'.$array[$i]->Titulo.'</label></div>
-										<div class="t-descripcion"><p>'.$array[$i]->Descripcion.'</p></div>
 										<div class="t-categoria"><p>Categorias: '.$array[$i]->Categorias.'</p></div>
 										<div class="t-precio"><p>'.$precio.'</p></div>
 										<div class="t-enlace"><a href="curso.php?Curso='.$array[$i]->ID.'">Ver curso</a></div>
@@ -128,3 +125,14 @@
 </body>
 </html>
 				
+<!--
+
+		echo 	'<div class="tarjeta-cuadro">
+											<div class="t-imagen"> <img src="'.$array[$i]->Miniatura.'"></div>
+											<div class="t-titulo"><label>'.$array[$i]->Titulo.'</label></div>
+											<div class="t-descripcion"><p>'.$array[$i]->Descripcion.'</p></div>
+											<div class="t-categoria"><p>Categorias: '.$array[$i]->Categorias.'</p></div>
+											<div class="t-precio"><p>'.$precio.'</p></div>
+											<div class="t-enlace"><a href="curso.php?Curso='.$array[$i]->ID.'">Ver curso</a></div>
+										</div>';
+										-->

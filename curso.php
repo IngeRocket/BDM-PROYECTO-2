@@ -8,6 +8,7 @@
 <body>
 	<?php include 'php/capaModelo.php'; ?>
 	<?php 
+	$condicion = false;
 		if(isset($_GET['Curso'])){
 			$identificador = $_GET['Curso'];
 			$respuesta = ConsultaCurso($identificador);
@@ -123,12 +124,12 @@
 							echo '<h2>Solo los alumnos pueden acceder a las acciones del curso</h2>';
 						}
 					}else{ 
-						echo "Inicia sesion para acceder a las acciones del curso";
+						echo '<h2>Inicia sesion para acceder a las acciones del curso</h2>';
 					}
 					 ?>
 				</div>
 			</div>
-		</div>	
+		</div>
 		<div class="informacion">
 			<label class="negritas">Informacion</label>
 			<div class="caja">
@@ -185,6 +186,7 @@
 								if($respuesta[0]->Calificacion == "0.00"){
 									echo "Sin Calificar";
 								}else{
+									$condicion = true;
 									echo $respuesta[0]->Calificacion;
 								}					
 							}
@@ -213,6 +215,12 @@
 				</div>
 			</div>
 		</div>
+		<?php  
+			if($condicion){
+				echo '<div class="renglon"><a href="comentarios.php">Ver comentarios</a></div>';
+			}
+
+		?>	
 		<?php  		}else{	?>	
 		 <h1>ACCESO INVALIDO A TRAVES DE URL</h1>
 		<?php 			} 	?>
