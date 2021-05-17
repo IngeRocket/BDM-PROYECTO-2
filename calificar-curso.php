@@ -12,13 +12,7 @@
 		<div class="menu">
 			<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
 			<div class="categorias">
-				<div class="categoria">Mas vendidos</div>
-				<div class="categoria">Mas populares</div>
-				<div class="categoria">Mas recientes</div>
-				<div class="categoria">Mejor promediados</div>
-			</div>
-			<div class="categorias">
-				<div class="categoria">Categorias</div>
+				<div class="categoria"><a href="buscador.php">Buscador</a></div>
 			</div>
 			<div class="opciones">
 				<div class="opc">

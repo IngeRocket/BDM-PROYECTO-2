@@ -22,6 +22,9 @@
 		case 'Comentarios':
 			CargarComentarios();
 		break;
+		case 'Buscador':
+			Buscador();
+		break;
 	}
 
 	function Categoria(){
@@ -116,5 +119,24 @@
 				echo json_encode($rows,JSON_UNESCAPED_UNICODE); 
 		$sentencia->close();
 		$var->CerrarConexion();
+ 	}
+ 	function Buscador(){
+ 		$titulo = $_POST['titulo'];
+ 		$categoria = $_POST['categoria'];
+ 		$opcion = $_POST['opcion'];
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_Buscador(?,?,?)");
+ 		$sentencia->bind_param('sss', $titulo, $categoria, $opcion);
+ 		$sentencia->execute();
+ 		
+ 			$resultado = $sentencia->get_result();
+ 			while( $r = $resultado->fetch_assoc()) {
+ 			                $rows[] = $r;
+ 			         }                    
+ 			echo json_encode($rows,JSON_UNESCAPED_UNICODE); 
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
  	}
 ?>

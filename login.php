@@ -11,20 +11,14 @@
 	<?php include 'php/capaModelo.php'; ?>
 
 	<div class="contenedor">
-		<header class="header">
-			<div class="menu">
-				<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
-				<div class="categorias">
-					<div class="categoria">Mas vendidos</div>
-					<div class="categoria">Mas populares</div>
-					<div class="categoria">Mas recientes</div>
-					<div class="categoria">Mejor promediados</div>
-				</div>
-				<div class="categorias">
-					<div class="categoria">Categorias</div>
-				</div>
+	<header class="header">
+		<div class="menu">
+			<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
+			<div class="categorias">
+				<div class="categoria"><a href="buscador.php">Buscador</a></div>
 			</div>
-		</header>
+		</div>
+	</header>
 		<div class="contenido">
 			<form method="post">
 			<label>Tipo de cuenta</label>

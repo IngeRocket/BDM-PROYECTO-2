@@ -2,12 +2,48 @@
 <html>
 <head>
 	<title>Historial</title>
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<link rel="stylesheet" type="text/css" href="styles/buscador.css">
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/buscador.js"></script>
 </head>
 <body>
+	<?php include 'php/capaModelo.php'; ?>
 	<div class="contenedor">
+	<header class="header">
+		<div class="menu">
+			<div class="logo"><a href="index.php"><img src="img/navbar/escuela-logo.png"></a></div>
+			<div class="categorias">
+				<div class="categoria"><a href="buscador.php">Buscador</a></div>
+			</div>
+			<div class="opciones">
+				<div class="opc">
+					<?php $prueba = GetLoggeo(); ?>
+					<label>
+						<?php 
+							if($prueba != "0"){
+								$nombre = GetNombreUsuario();
+								echo "<a href='configuracion.php'>".$nombre."</a>";
+							}else{
+								echo '<a href="login.php">Inicio de Sesion</a>';
+							}
+					 	?>	 	
+					 </label>
+				</div>
+				<div class="opc">
+					<label>
+							<?php 
+								if($prueba != "0"){
+									echo '<a href="despedida.php">Cerrar Sesion</a>';
+								}else{
+									echo '<a href="registro.php">Registro</a>';
+								}
+						 	?>	
+					</label>
+				</div>
+			</div>
+		</div>
+	</header>
 		<div class="pantalla">
 			<div class="p-panel">
 				<div class="capsula">
@@ -16,7 +52,7 @@
 						
 					</select>
 					<label class="salto">Orden</label>
-					<select>
+					<select id="opcion">
 						<option value="1">Predeterminado</option>
 						<option value="2">Mas Vendidos (Precio ascendente)</option>
 						<option value="3">Mas Vendidos (Precio descendente)</option>
@@ -45,16 +81,7 @@
 					</div>
 				</div>
 				<div class="r-contenido" id="respuesta">
-					
-					<div class="tarjeta">
-						<div class="t-imagen"><img src="img/fondo.png"></div>
-						<div class="t-titulo">
-							<div class="titulo-nombre">Nombre del cuso</div>
-							<div class="titulo-categoria">CSS</div>
-						</div>
-						<div class="t-progreso">progreso</div>
-						<div class="t-estado">estado</div>
-					</div>
+				<!-- AQUI VAN LOS RESULTADOS CON JAVASCRIPT -->
 				</div>
 			</div>
 		</div>

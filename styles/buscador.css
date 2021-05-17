@@ -185,3 +185,8 @@ button:hover{
 .salto{
 	margin-top: 20px;
 }
+
+a.enlace{
+	text-decoration: none;
+	color: black;
+}
