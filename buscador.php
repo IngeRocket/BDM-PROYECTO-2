@@ -21,8 +21,8 @@
 						<option value="2">Mas Vendidos (Precio ascendente)</option>
 						<option value="3">Mas Vendidos (Precio descendente)</option>
 						<option value="4">Mejor Calificados</option>
-						<option value="5">Mostar solo cursos gratis</option>
-						<option value="6">Mostrar solo cursos de paga</option>
+						<option value="5">Mostar solo cursos gratis (A - Z)</option>
+						<option value="6">Mostrar solo cursos de paga (A - Z)</option>
 					</select>
 				</div>
 			</div>
@@ -39,9 +39,9 @@
 						<div class="t-titulo">
 							<div class="titulo-nombre">Nombre del cuso</div>
 						</div>
-						<div class="t-progreso">progreso</div>
-						<div class="t-estado">estado</div>
-						<div class="t-e-compra">precio</div>
+						<div class="t-progreso">Fases Gratuitas</div>
+						<div class="t-estado">Fases Totales</div>
+						<div class="t-e-compra">Precio</div>
 					</div>
 				</div>
 				<div class="r-contenido" id="respuesta">
