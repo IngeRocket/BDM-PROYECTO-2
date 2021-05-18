@@ -103,7 +103,9 @@
 				if($contador == count($array)){
 					if( PreguntaCalificado() ){
 						echo '<a class="calificar" href=calificar-curso.php?Curso='.GetClaveCurso().'>Calificar curso</a>';
-					}	
+					}
+					SetCertificadoNombreCurso($array[0]->Curso);
+					echo '<a href="certificado.php">Ver certificado</a>';	
 				}
 			}
 			 ?>

@@ -38,6 +38,9 @@
 	function SetCantidadFase($cantidad){
 		$_SESSION['CursoFase'] = $cantidad;
 	}
+	function SetCertificadoNombreCurso($nombre){
+		$_SESSION['TituloCurso'] = $nombre;
+	}
 
 
 	//GET
@@ -95,8 +98,6 @@
 	function GetCantidadFase(){
 		return $_SESSION['CursoFase'];
 	}
-
-
 	function AumentarContadorFase(){
 		$var = 1 + $_SESSION['CursoFase'];
 		$_SESSION['CursoFase'] = $var;
@@ -104,6 +105,10 @@
 	function GetRutaFisica(){
 		$ruta = "uploads/";
 		return $ruta;
+	}
+
+	function GetCertificadoNombreCurso(){
+		return $_SESSION['TituloCurso'];
 	}
 
 	function CerrarSesion(){
