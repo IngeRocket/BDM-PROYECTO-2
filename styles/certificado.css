@@ -14,9 +14,6 @@
 	display: flex;
 	flex-flow: column;
 	flex: 1 1 auto;
-	align-items: center;
-	margin-top: 50px;
-	margin-bottom: 50px;
 }
 
 
@@ -27,8 +24,8 @@
 	flex-flow: column;
 	border: solid black;
 	border-radius: 5px;
-	width: 900px;
-	height: 700px;
+	/*width: 900px;*/
+	height: 1000px;
 
 }
 
@@ -105,9 +102,10 @@
 	justify-content: center;
 	text-align: center;
 	height: 0;
+	background-color: #0B5351;
 }
 .firma > img{
-	width: 100%;
+	
 	object-fit: cover;
 	object-position: center;
 }

@@ -6,14 +6,18 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="styles/certificado.css">
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/html2pdf.bundle.min.js"></script>
 	<script type="text/javascript" src="js/certificado.js"></script>
 </head>
 <body>
 	<?php include 'php/capaModelo.php'; ?>
 	<div class="contenedor">
 		<div class="volver"><button id="volver">Volver lista de fases</button></div>
+		<div class="renglon">
+			<button id="imprimir">Guardar Certificado PDF</button>
+		</div>
 	<div class="contenedor-certificado">
-		<div class="certificado">
+		<div class="certificado" id="mi-certificado">
 		<div class="contenido">
 			<div class="titulo">
 				<img class="logotipo" src="img/logo.png">
@@ -30,9 +34,6 @@
 			</div>
 		</div>
 		</div>
-	</div>
-	<div class="renglon">
-		<button id="imprimir">Guardar Certificado PDF</button>
 	</div>
 	</div>
 </body>
