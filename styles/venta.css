@@ -60,6 +60,7 @@ form > button{
 .t-img{
 	display: flex;
 	width: 20%;
+	justify-content: center;
 }
 .info{
 	display: flex;
@@ -123,4 +124,20 @@ form > button{
 .enlace{
 	display: flex;
 	flex: 1 1 auto;
+}
+a.enlace-lista{
+	text-decoration: none;
+	color: black;
+}
+.boton-aplicar{
+	background-color: white;
+	color: black;
+	border: solid 1px #4f76d1;
+	transition: all ease 0.3s;
+}
+.boton-aplicar:hover{
+	cursor: pointer;
+	cursor: hand;
+	background-color: #4f76d1;
+	color: white;
 }

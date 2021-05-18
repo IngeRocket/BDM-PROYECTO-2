@@ -93,17 +93,20 @@
 									$obtenido ="Inscrito";
 									if($array[$i]->Comprado == "1"){
 										$obtenido = "Comprado";
-									}
-								echo 	'<div class="tarjeta">
-											<div class="t-imagen"><img src="'.$array[$i]->Foto.'"></div>
-											<div class="t-titulo">
-											<div class="titulo-nombre">'.$array[$i]->TituloCurso.'</div>
-											<div class="titulo-categoria">Categorias: '.$array[$i]->Categorias.'</div>
-											</div>
-											<div class="t-progreso">'.$array[$i]->Progreso.'/'.$array[$i]->Fases.'</div>
-											<div class="t-estado">'.$estado.'</div>
-											<div class="t-e-compra">'.$obtenido.'</div>
-										</div>';
+									}											
+									$ruta="curso.php?Curso=".$array[$i]->IDcurso;
+									echo 	'<a class="a-tarjeta" href='.$ruta.'>
+											<div class="tarjeta">
+												<div class="t-imagen"><img src="'.$array[$i]->Foto.'"></div>
+												<div class="t-titulo">
+												<div class="titulo-nombre">'.$array[$i]->TituloCurso.'</div>
+												<div class="titulo-categoria">Categorias: '.$array[$i]->Categorias.'</div>
+												</div>
+												<div class="t-progreso">'.$array[$i]->Progreso.'/'.$array[$i]->Fases.'</div>
+												<div class="t-estado">'.$estado.'</div>
+												<div class="t-e-compra">'.$obtenido.'</div>
+											</div></a>';
+							
 								}
 							}	
 						}

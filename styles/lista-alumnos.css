@@ -1,7 +1,96 @@
 *{
-	padding: 10px;
-	margin: 10px;
+	padding: 0px;
+	margin: 0px;
 	box-sizing: border-box;
 	font-family: Arial;
 }
 
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+.renglon{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.area{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.tarjeta{
+	display: flex;
+	flex: 1 1 auto;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 15px;
+	border: solid 1px gray;
+}
+.t-nombre{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+.t-calificacion{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+}
+.t-comentario{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+}
+.t-progreso{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+}
+.t-e-compra{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+}
+.t-fecha-compra{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+}
+
+.titulo{
+	margin-top: 15px;
+	font-size: 1.2em;
+}
+.volver{
+	display: flex;
+	margin-left: 15px;
+	justify-content: flex-start;
+}
+.volver > a{
+	margin-top: 15px;
+	text-decoration: none;
+	color: black;
+	padding: 15px;
+	background-color: white;
+	border-radius: 10px;
+	border: solid 1px #00a8f3;
+	transition: all ease 0.3s;
+}
+.volver > a:hover{
+	background-color: #00a8f3;
+	color: white;
+}

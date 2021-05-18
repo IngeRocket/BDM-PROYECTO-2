@@ -163,3 +163,7 @@ button:hover{
 	justify-content: center;
 	align-items: center;
 }
+a.a-tarjeta{
+	text-decoration: none;
+	color: black;
+}

@@ -576,7 +576,30 @@
  		$var->CerrarConexion();
  	}
  	function ListaAlumnos(){
+ 	
+ 		$curso = GetClaveCurso();
 
+ 		$var = new Conexion;
+ 		$mysqli = $var->getConexion();
+ 		
+ 		$sentencia = $mysqli->prepare("CALL SP_ListaAlumnos(?)");
+ 		$sentencia->bind_param('s', $curso);
+ 		$sentencia->execute();
+ 		
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					return $array;
+ 				}else{
+ 					echo "error en la llamada";
+ 				}
+ 		
+ 		$sentencia->close();
+ 		$var->CerrarConexion();
  	}
  	function CambiarFotoUsuario($ruta){
  		$idAlumno = GetIdUsuario();

@@ -190,3 +190,16 @@ a.enlace{
 	text-decoration: none;
 	color: black;
 }
+
+button#buscar{
+	border: solid 1px #4f76d1;
+	color: black;
+	transition: all ease 0.3s;
+	background-color: white;
+}
+button#buscar:hover{
+	cursor: hand;
+	cursor: pointer;
+	background-color: #4f76d1;
+	color: white;
+}

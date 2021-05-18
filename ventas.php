@@ -52,7 +52,7 @@
 					<option value="2">Mejor Calificado</option>
 					<option value="3">Cantidad de alumnos</option>
 				</select>
-				<button type="submit" name="aplicar">Aplicar</button>
+				<button type="submit" name="aplicar" class="boton-aplicar">Aplicar</button>
 			</form>	
 		</div>
 		<div class="resultado">
@@ -80,11 +80,12 @@
 							 if ($array[$i]->Precio != "0.00"){
 							 	$precio = $array[$i]->Precio;
 							 } 
-							echo 	'<div class="tarjeta">
+							echo 	'<a class="enlace-lista" href="lista-alumnos.php?Curso='.$array[$i]->ID.'">
+									<div class="tarjeta">
 										<div class="t-img"><img src="'.$array[$i]->Miniatura.'"></div>
 										<div class="info">
-											<div class="t-titulo"><label>'.$array[$i]->Titulo.'</label></div>
-											<div class="t-categoria"><label>'.$array[$i]->Categorias.'</label></div>
+											<div class="t-titulo"><p>'.$array[$i]->Titulo.'</p></div>
+											<div class="t-categoria"><p>'.$array[$i]->Categorias.'</p></div>
 										</div>
 										<div class="t-precio"><label>'.$precio.'</label></div>
 										<div class="t-alumnos"><label>'.$array[$i]->Alumnos.'</label></div>
@@ -92,7 +93,7 @@
 										<div class="t-fases"><label>'.$array[$i]->Fases.'</label></div>
 										<div class="t-ventas"><label>'.$array[$i]->Ventas.'</label></div>
 										<div class="t-ganancias"><label>'.$array[$i]->Ganancias.'</label></div>
-									</div>'; 
+									</div></a>'; 
 							}	
 						}
 					?>
@@ -107,19 +108,3 @@
 	</div>
 </body>
 </html>
-
-<?php 
-/*echo 	'<div class="tarjeta">
-			<div class="t-img"><img src="img/fondo.png"></div>
-			<div class="info">
-				<div class="t-titulo"><label>Titulo</label></div>
-				<div class="t-categoria"><label>Categorias</label></div>
-			</div>
-			<div class="t-precio"><label>Precio</label></div>
-			<div class="t-alumnos"><label>Alumnos</label></div>
-			<div class="t-calificacion"><label>Calificaion</label></div>
-			<div class="t-fases"><label>Fases</label></div>
-			<div class="t-ventas"><label>Ventas</label></div>
-			<div class="t-ganancias"><label>Ganancias</label></div>
-		</div>'; */
- ?>
