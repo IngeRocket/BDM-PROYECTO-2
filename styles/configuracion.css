@@ -29,12 +29,16 @@
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	background-color: skyblue;
+	border-radius: 15px;
+	border: solid 1px gray;
 	margin: 5px;
 }
 .panel-der{
 	flex: 3 1 auto;
+	align-items: center;
+	justify-content: center;
 }
+
 .panel-izq{
 	width: 600px;
 }
@@ -74,6 +78,7 @@
 }
 .botones > button{
 	margin-top: 10px;
+	margin-bottom: 20px;
 	font-size: 1.0em;
 	width: 100%;
 	height: 45px;
@@ -91,4 +96,41 @@
 button:hover{
 	cursor: hand;
 	cursor: pointer;
+}
+
+form{
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	font-size: 1.1em;
+	justify-content: center;
+	align-items: center;
+}
+form > input{
+	margin-top: 20px;
+	border: solid 1px gray;
+	border-radius: 15px;
+	padding: 15px;
+	height: 50px;
+}
+form > button{
+	margin-top: 15px;
+	border-radius: 10px;
+	width: 100%;
+	font-size: 1.1em;
+	padding: 10px;
+	border: solid 1px gray;
+}
+.renglon{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
+}
+.renglon > button{
+	width: 200px;
+	height: 40px;
+	font-size: 1.1em;
+	border: solid 1px gray;
+	border-radius: 10px;
 }

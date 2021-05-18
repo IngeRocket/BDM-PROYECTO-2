@@ -1,0 +1,51 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+.contenedor{
+	display: flex;
+	flex-flow: column;
+}
+form{
+	margin-top: 20px;
+	display: flex;
+	flex: 1 1 auto;
+	flex-flow: column;
+	align-items: center;
+}
+form > button{
+	padding: 10px;
+	margin: 10px;
+	width: 20%;
+}
+textarea{
+	resize: none;
+	width: 80%;
+	height: 100px;
+	font-size: 1.0em;
+	padding: 10px;
+}
+a.volver{
+
+}
+
+button:hover{
+	cursor: hand;
+	cursor: pointer;
+}
+.leyenda{
+	display: flex;
+	font-size: 1em;
+	color: gray;
+	width: 80%;
+	justify-content: flex-end;
+}
+.renglon{
+	display: flex;
+	flex: 1 1 auto;
+}
+.renglon > a{
+	
+}

@@ -561,7 +561,7 @@
  					         }                    
  					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
  					$array = (array)json_decode($ValorRegresado);
- 					if ($array[0]->Respuesta == "1"){
+ 					if ($array[0]->Resultado == "1"){
  						echo'<script type="text/javascript">
  							 alert("Duda realizada con exito!");
  							 </script>';
@@ -575,23 +575,37 @@
  		$sentencia->close();
  		$var->CerrarConexion();
  	}
- 	function ContestarChat($idAlumno, $idCurso, $mensaje){
- 		$rol = 0;
- 		if(GetRolUsuario()=="Alumno"){
- 			$rol = 1;
- 		}
+ 	function ListaAlumnos(){
+
+ 	}
+ 	function CambiarFotoUsuario($ruta){
+ 		$idAlumno = GetIdUsuario();
 
  		$var = new Conexion;
  		$mysqli = $var->getConexion();
  		
- 		$sentencia = $mysqli->prepare("CALL SP_NuevoMensaje(?,?,?,?)");
- 		$sentencia->bind_param('ssss', $idAlumno, $idCurso, $mensaje, $rol);
+ 		$sentencia = $mysqli->prepare("CALL SP_UsuarioNuevaFoto(?,?)");
+ 		$sentencia->bind_param('ss', $idAlumno, $ruta);
  		$sentencia->execute();
- 				if($sentencia){
- 			
- 				}else{
+ 		if($sentencia){
+ 			$resultado = $sentencia->get_result();
+ 					while( $r = $resultado->fetch_assoc()) {
+ 					                $rows[] = $r;
+ 					         }                    
+ 					$ValorRegresado = json_encode($rows,JSON_UNESCAPED_UNICODE);
+ 					$array = (array)json_decode($ValorRegresado);
+ 					
+ 					if($array[0]->Respuesta == "1"){
+ 						SetFotoUsuario($ruta);
+ 						echo'<script type="text/javascript">
+ 							 alert("'.$array[0]->Mensaje.'");
+ 							 </script>';
+ 						SetFechaModificacion($array[0]->FechaModificacion);
+ 						header("Location: configuracion.php");
+ 					}
+ 		}else{
  					echo "error en la llamada";
- 				}
+ 		}
  		
  		$sentencia->close();
  		$var->CerrarConexion();

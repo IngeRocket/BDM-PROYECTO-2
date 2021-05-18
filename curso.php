@@ -233,6 +233,7 @@
 		}
 		if(isset($_POST['crear-mensaje'])){
 			//ir a otra pagina para crear el mensaje de dua sobre el curso
+			header("Location: curso-duda.php");
 		}
 	 ?>
 </body>

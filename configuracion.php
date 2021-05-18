@@ -4,6 +4,8 @@
 	<title>Perfil</title>
 	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 	<link rel="stylesheet" type="text/css" href="styles/configuracion.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/configuracion.js"></script>
 </head>
 <body>
 	<?php include 'php/capaModelo.php' ?>
@@ -109,16 +111,31 @@
 						 ?></label>
 					</div>
 					<div class="botones">
-						<button>Cambiar foto de usuario</button>
-						<button>Cambiar clave de acceso</button>
+						<button id="CambiarFoto">Cambiar foto de usuario</button>
 					</div>
 				</div>
 			</div>
-			<div class="panel-der"><label>Panel 2</label></div>
+			<div class="panel-der" id="panel-der">
+				<!-- ESPACIO DE FORMULARIO CON JAVASCRIPT -->
+					<!--			<form method='post' enctype="multipart/form-data">
+								<label>Nueva Foto</label>
+								<input type="file" name="c-img" accept=".bmp, .png, .jpg" required>
+								<button type='submit' name='nuevafoto'>Cambiar Foto</button>
+								</form>
+								<div class='renglon'>
+								<button id='cancelar'>Cancelar</button>
+								</div>	-->
+			</div>
 		</div>
 	</div>
 	<?php 
-
+		if(isset($_POST['nuevafoto'])){
+			$rutaFisica = GetRutaFisica();
+			$rutafoto = $_FILES['c-img']['name'];
+			$rutaAbsolutaFoto = $rutaFisica.$rutafoto;
+			move_uploaded_file($_FILES['c-img']['tmp_name'], $rutaAbsolutaFoto);
+			CambiarFotoUsuario($rutaAbsolutaFoto);
+		}
 	 ?>
 </body>
 </html>
