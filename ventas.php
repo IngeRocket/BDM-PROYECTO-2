@@ -48,7 +48,7 @@
 			<form method="post">
 				<label>Filtro:</label>
 				<select id="opcion" name="filtro">
-					<option value="1">Mayor ventas</option>
+					<option value="1">Ganancias (mayor - menor)</option>
 					<option value="2">Mejor Calificado</option>
 					<option value="3">Cantidad de alumnos</option>
 				</select>

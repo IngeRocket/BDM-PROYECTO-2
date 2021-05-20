@@ -19,6 +19,11 @@ form > button{
 	padding: 10px;
 	margin: 10px;
 	width: 20%;
+	border: solid 1px #194ce4;
+	border-radius: 10px;
+	font-size: 1.1em;
+	background-color: white;
+	transition: all ease 0.3s;
 }
 textarea{
 	resize: none;
@@ -27,13 +32,12 @@ textarea{
 	font-size: 1.0em;
 	padding: 10px;
 }
-a.volver{
-
-}
 
 button:hover{
 	cursor: hand;
 	cursor: pointer;
+	background-color: #194ce4;
+	color: white;
 }
 .leyenda{
 	display: flex;
@@ -47,5 +51,20 @@ button:hover{
 	flex: 1 1 auto;
 }
 .renglon > a{
-	
+	text-decoration: none;
+	color: black;
+	background-color: white;
+	border: solid 1px #4521a9;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	font-size: 1.1em;
+	transition: all ease 0.3s;
+}
+.renglon > a:hover{
+	background-color: #4521a9;
+	color: white;
 }
