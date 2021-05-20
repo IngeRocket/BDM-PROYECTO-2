@@ -1,4 +1,3 @@
-<!-- PASO AWS -->
 <?php 
 
 	class Conexion{
