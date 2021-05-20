@@ -41,9 +41,9 @@
 			 			<label>Costo de la fase</label>
 			 			<div class="renglon">
 			 				<label class="espaciado"><input type="radio" id="precio-gratis" 	value="1" name="costo" checked>Gratis</label>
-			 				<label class="espaciado"><input type="radio" id="precio-paga" 	value="0" name="costo">De paga</label>
+			 				<label class="espaciado"><input type="radio" id="precio-paga" 	value="0.00" name="costo">De paga</label>
 			 			</div>
-			 			<input type="number" name="precio" id="costo" min="0" max="9999.99" value="0.00" step="0.25" readonly>
+			 			<input type="number" name="precio" id="costo" min="1" max="9999.99" value="1.00" step="0.25" readonly>
 			 			
 			 			<label>Video de la fase</label>
 			 			<input type="file" name="video" accept=".mp4" required>

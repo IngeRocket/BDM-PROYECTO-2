@@ -1,12 +1,13 @@
+<!-- PASO AWS -->
 <?php 
 
 	class Conexion{
 
 		private $mysqli;
-		private $databasehost = "127.0.0.1";	
-		private $databaseuser = "root";
-		private $databasepass = "root";
-		private $databasename = "bdm_proyecto";
+		private $databasehost = "aws-bdm-db.cwotpk0fvwu5.us-west-2.rds.amazonaws.com";	
+		private $databaseuser = "admin";
+		private $databasepass = "IngeRocket00";
+		private $databasename = "BDM_PROYECTO";
 
 		public function __construct(){
 			try {
