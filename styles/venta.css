@@ -141,3 +141,11 @@ a.enlace-lista{
 	background-color: #4f76d1;
 	color: white;
 }
+.ganancias{
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.ganancias > label{
+	font-size: 2em;
+}

@@ -8,7 +8,9 @@
 	<script type="text/javascript" src="js/historial.js"></script>
 </head>
 <body>
-	<?php include 'php/capaModelo.php'; ?>
+	<?php include 'php/capaModelo.php'; 
+	$GranTotal = 0.00;
+	?>
 	<div class="contenedor">
 	<header class="header">
 		<div class="menu">
@@ -56,7 +58,7 @@
 			</form>	
 		</div>
 		<div class="resultado">
-		<!--	<a class="enlace" href="#"> -->
+
 				<div class="tarjeta">
 					<div class="t-img"><label>Miniatura</label></div>
 					<div class="info">
@@ -69,7 +71,7 @@
 					<div class="t-ventas"><label>Ventas</label></div>
 					<div class="t-ganancias"><label>Ganancias</label></div>
 				</div>
-		<!--	</a> -->
+	
 				<?php 
 				if(isset($_POST['aplicar'])){
 					$opcion = $_POST['filtro'];
@@ -79,6 +81,8 @@
 							 $precio = "Gratis";
 							 if ($array[$i]->Precio != "0.00"){
 							 	$precio = $array[$i]->Precio;
+							 	$aux = floatval($array[$i]->Ganancias);
+							 	$GranTotal += $aux; 
 							 } 
 							echo 	'<a class="enlace-lista" href="lista-alumnos.php?Curso='.$array[$i]->ID.'">
 									<div class="tarjeta">
@@ -104,6 +108,9 @@
 					}
 				?>
 
+		</div>
+		<div class="ganancias">
+			<label>Gran Total:<?php echo ' $'.$GranTotal; ?></label>
 		</div>
 	</div>
 </body>
