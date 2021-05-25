@@ -60,7 +60,7 @@
 				<div class="video">				
 					<?php 	if($respuesta[0]->Respuesta == "1"){ ?>
 					<video controls poster= <?php echo "'".$respuesta[0]->Miniatura."'" ?> >
-					<source type="video/mp4" src=<?php echo "'".$respuesta[0]->EnlaceVideo."'"; ?> >
+					<source src=<?php echo "'".$respuesta[0]->EnlaceVideo."'"; ?> >
 					</video>
 					<?php	}	?>
 				</div>

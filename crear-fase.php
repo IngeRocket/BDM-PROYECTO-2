@@ -46,7 +46,7 @@
 			 			<input type="number" name="precio" id="costo" min="0" max="9999.99" value="0.00" step="0.25" readonly>
 			 			
 			 			<label>Video de la fase</label>
-			 			<input type="file" name="video" accept=".mp4" required>
+			 			<input type="file" name="video" accept=".mp4, .m4v" required>
 			 			<label>Esta fase va a contener archivos?</label>
 			 			<div class="renglon">
 			 			<label class="espaciado"><input type="radio" name="pregunta" value="SI" >Si </label>

@@ -24,7 +24,7 @@
 				<label>Miniatura del curso (Imagen)</label>
 				<input type="file" name="c-img" accept=".bmp, .png, .jpg" required>
 				<label>Video del curso</label>
-				<input type="file" name="c-video" accept=".mp4" required>
+				<input type="file" name="c-video" accept=".mp4, .m4v" required>
 				<button type="submit" name="enviar">Crear Curso</button>
 			</form>	
 		</div>
