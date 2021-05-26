@@ -90,7 +90,7 @@
 								if($extension == "mp4" || $extension == "MP4" || $extension == "avi" || $extension == "AVI") {
 									Video($archivos[$i]->Ruta);
 								}else{
-									Documento();
+									Documento($archivos[$i]->Ruta);
 								}
 							}
 						}
