@@ -82,6 +82,8 @@
 							 if ($array[$i]->Precio != "0.00"){
 							 	$precio = $array[$i]->Precio;
 							 	$aux = floatval($array[$i]->Ganancias);
+							 	$CantidadVentas = floatval($array[$i]->Ventas);
+							 	$aux = $aux * $CantidadVentas;
 							 	$GranTotal += $aux; 
 							 } 
 							echo 	'<a class="enlace-lista" href="lista-alumnos.php?Curso='.$array[$i]->ID.'">
