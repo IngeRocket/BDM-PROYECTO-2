@@ -84,7 +84,7 @@
 							$ruta = $archivos[$i]->Ruta;
 							$ruta = pathinfo($ruta);
 							$extension = $ruta['extension'];
-							if($extension == "PNG" || $extension == "png" || $extension == "jpeg" || $extension == "JPEG" ||$extension == "bmp" ||$extension == "bmp"){
+							if($extension == "PNG" || $extension == "png" || $extension == "jpeg" || $extension == "JPEG" ||$extension == "BMP" ||$extension == "bmp" || $extension == "JPG" ||$extension == "jpg"){
 								Imagen($archivos[$i]->Ruta);
 							}else{
 								if($extension == "mp4" || $extension == "MP4" || $extension == "avi" || $extension == "AVI") {
