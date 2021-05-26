@@ -47,7 +47,10 @@ function Peticion(curso, opcion){
 			console.log(data);
 			var datos = JSON.parse(data);
 			for(var i = 0; i < datos.length; i++){
-				CrearTarjeta(datos[i].Nombre, datos[i].Comentario, datos[i].Calificacion);
+				if (datos[i].Calificacion != null ){
+					CrearTarjeta(datos[i].Nombre, datos[i].Comentario, datos[i].Calificacion);
+				}
+				
 			}
 			
 		}
